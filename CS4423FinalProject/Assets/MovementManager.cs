@@ -1,0 +1,63 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MovementManager : MonoBehaviour
+{
+
+    [SerializeField] Player player;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void MovePlayer(Vector3 direction)
+    {
+        Rigidbody2D rigid = player.GetRigid();
+        float speed = player.GetSpeed();
+
+        Vector3 curVel = new Vector3(0, rigid.velocity.y, 0);
+
+        MoveVel(direction, rigid, speed, curVel);
+
+    }
+
+    void Move(Vector3 direction, Rigidbody2D rigid, float speed) {
+        
+
+        rigid.velocity = direction * speed;
+    }
+
+    void MoveVel(Vector3 direction, Rigidbody2D rigid, float speed, Vector3 curVel) 
+    {
+        rigid.velocity = curVel + (direction * speed);
+    }
+
+    public void JumpPlayer()
+    {
+        Rigidbody2D rigid = player.GetRigid();
+        Transform trans = player.transform;
+        float jump = player.GetJump();
+        float jumpOffset = player.GetJumpOffset();
+        float jumpRadius = player.GetJumpRadius();
+        LayerMask ground = player.GetGroundLayer();
+
+        Jump(rigid, jump, trans, jumpOffset, jumpRadius, ground);
+    }
+
+    void Jump(Rigidbody2D rigid, float jump, Transform trans, float jumpOffset, float jumpRadius, LayerMask ground)
+    {
+        if(Physics2D.OverlapCircleAll(trans.position + new Vector3(0,jumpOffset,0),jumpRadius,ground).Length > 0) {
+            rigid.AddForce(Vector3.up * jump, ForceMode2D.Impulse);
+        }
+    
+    }
+}
