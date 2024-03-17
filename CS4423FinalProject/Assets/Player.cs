@@ -7,10 +7,14 @@ public class Player : MonoBehaviour
 
     [Header("Stats")]
 
+    [SerializeField] float maxHealth = 5f;
     [SerializeField] float health = 5f;
     [SerializeField] float mana = 10f;
     [SerializeField] float speed = 7f;
+
+    [Header("Effects")]
     [SerializeField] float jump = 4f;
+    [SerializeField] float healthLossMultiplier = 1f;
 
     [Header("Physics")]
 
@@ -35,7 +39,7 @@ public class Player : MonoBehaviour
 
     public void LoseHealth(float loss)
     {
-        float afterHealth = this.health - loss;
+        float afterHealth = this.health - (loss * healthLossMultiplier);
         if (afterHealth <= 0)
             { this.health = 0; }
         else
@@ -44,10 +48,28 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void GainHealth(float gain)
+    {
+        float afterHealth = this.health + gain;
+        if (afterHealth >= maxHealth)
+            { this.health = maxHealth; }
+        else
+        {
+            health = afterHealth;
+        }
+    }
+
+    public void reduceMana()
+    {
+        
+    }
+    
+
     public Rigidbody2D GetRigid() { return this.rigid; }
     public float GetSpeed() { return this.speed; }
     public float GetJump() { return this.jump; }
     public float GetJumpOffset() { return this.jumpOffset; }
     public float GetJumpRadius() { return this.jumpRadius; }
     public LayerMask GetGroundLayer() { return this.ground; }
+
 }
