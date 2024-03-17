@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [Header("Stats")]
 
     [SerializeField] float maxHealth = 5f;
+    [SerializeField] float maxMana = 5f;
     [SerializeField] float health = 5f;
     [SerializeField] float mana = 10f;
     [SerializeField] float speed = 7f;
@@ -22,7 +23,6 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpOffset = -0.5f;
     [SerializeField] float jumpRadius = 0.25f;
 
-    float manaCost = 1f;
     Rigidbody2D rigid;
 
     // Start is called before the first frame update
@@ -59,9 +59,27 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void reduceMana()
+    public void ReduceMana(float cost)
     {
-        
+        float afterMana = this.mana - cost;
+
+        if (afterMana <= 0)
+            { this.mana = 0; }
+        else
+        {
+            this.mana = afterMana;
+        }
+    }
+
+    public void GainMana(float gain)
+    {
+        float afterMana = this.mana + gain;
+        if (afterMana >= maxMana)
+            { this.mana = maxMana; }
+        else
+        {
+            mana = afterMana;
+        }
     }
     
 

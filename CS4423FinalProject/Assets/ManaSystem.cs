@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ManaSystem : MonoBehaviour
 {
+    [SerializeField] Player player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -12,6 +14,23 @@ public class ManaSystem : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        
+    }
+
+    public void ReduceMana(int spell)
+    {
+        switch (spell)
+        {
+            case 0:
+            break;
+            default:
+                Debug.Log("Man Reduction Not working");
+                break;
+        }
+    }
+
+    public void RestoreMan(float gain)
     {
         
     }
