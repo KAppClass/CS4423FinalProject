@@ -34,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6323265344632624602}
+  - {fileID: 3556002388858523729}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5243693140816388535
@@ -100,10 +101,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbc08f0eba2acc4c81a2cb89fed8a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  mana: 10
-  speed: 7
-  jump: 4
+  playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
+  ground:
+    serializedVersion: 2
+    m_Bits: 8
+  jumpOffset: -0.5
+  jumpRadius: 0.25
 --- !u!50 &3935052981529106978
 Rigidbody2D:
   serializedVersion: 4
@@ -176,6 +179,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &4124849337976180997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3556002388858523729}
+  - component: {fileID: 4785834764139321709}
+  m_Layer: 0
+  m_Name: PlayerSpellShooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3556002388858523729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4124849337976180997}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.29, y: 0.17000008, z: 0.05017933}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6854850868754133128}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4785834764139321709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4124849337976180997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c81a665f5817144a807482a69502cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireBall: {fileID: 2942213477455594466, guid: d3baaae8f90438e40852ce5e19a65925, type: 3}
+  manaSystem: {fileID: 0}
 --- !u!1 &7601642731534156779
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,5 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d7cfae203c94341bad8dd88d30f7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 0}
   player: {fileID: 5504486188786155122}
+  playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
+  movement: {fileID: 0}
+  shooter: {fileID: 4785834764139321709}

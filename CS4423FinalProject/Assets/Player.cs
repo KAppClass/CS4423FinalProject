@@ -5,17 +5,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    [Header("Stats")]
+    [SerializeField] PlayerSO playerSO;
 
-    [SerializeField] float maxHealth = 5f;
-    [SerializeField] float maxMana = 5f;
-    [SerializeField] float health = 5f;
-    [SerializeField] float mana = 10f;
-    [SerializeField] float speed = 7f;
+    float maxHealth = 10f;
+    float maxMana = 5f;
+    float health = 10f;
+    float mana = 5f;
+    float speed = 7f;
+    int spell = 0;
 
-    [Header("Effects")]
-    [SerializeField] float jump = 4f;
-    [SerializeField] float healthLossMultiplier = 1f;
+    float jump = 15f;
+    float healthLossMultiplier = 1f;
+    float manaRecovery = 0.000001f;
 
     [Header("Physics")]
 
@@ -29,12 +30,44 @@ public class Player : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        
+        if (playerSO != null)
+        {
+            maxHealth = playerSO.maxHealth;
+            maxMana = playerSO.maxMana;
+            health = playerSO.health;
+            mana = playerSO.mana;
+            speed = playerSO.speed;
+            jump = playerSO.jump;
+            healthLossMultiplier = playerSO.healthLossMultiplier;
+            spell = playerSO.spell;
+        }
+
+        
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (playerSO != null)
+        {
+            playerSO.health = health;
+            playerSO.mana = mana;
+            playerSO.speed = speed;
+            playerSO.jump = jump;
+            playerSO.healthLossMultiplier = healthLossMultiplier;
+        }
+
+        //Debug.Log("PlayerSO " + playerSO.mana);
+        Debug.Log("Player " + mana);
+
+        // if ( !Input.GetMouseButtonDown(0))
+        // {
+        //     RecoverMana(manaRecovery);
+        // }
+
     }
 
     public void LoseHealth(float loss)
@@ -44,7 +77,7 @@ public class Player : MonoBehaviour
             { this.health = 0; }
         else
         {
-            health = afterHealth;
+            this.health = afterHealth;
         }
     }
 
@@ -55,7 +88,7 @@ public class Player : MonoBehaviour
             { this.health = maxHealth; }
         else
         {
-            health = afterHealth;
+            this.health = afterHealth;
         }
     }
 
@@ -71,6 +104,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void RecoverMana(float recover){
+        StartCoroutine(RecoverManaRoutine());
+        IEnumerator RecoverManaRoutine(){
+            while(true){
+                yield return new WaitForSeconds(0.0000001f);
+                GainMana(recover);
+            }
+        }
+    }
+
     public void GainMana(float gain)
     {
         float afterMana = this.mana + gain;
@@ -78,10 +121,14 @@ public class Player : MonoBehaviour
             { this.mana = maxMana; }
         else
         {
-            mana = afterMana;
+            this.mana = afterMana;
         }
     }
-    
+
+    public void ChangeMaxHealth(float max)
+    {
+        maxHealth = max;
+    }
 
     public Rigidbody2D GetRigid() { return this.rigid; }
     public float GetSpeed() { return this.speed; }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ManaSystem : MonoBehaviour
 {
     [SerializeField] Player player;
+    [SerializeField] PlayerSO playerSO;
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +24,12 @@ public class ManaSystem : MonoBehaviour
         switch (spell)
         {
             case 0:
-            break;
+                player.ReduceMana(5f);
+                break;
             default:
                 Debug.Log("Man Reduction Not working");
                 break;
         }
     }
 
-    public void RestoreMan(float gain)
-    {
-        
-    }
 }

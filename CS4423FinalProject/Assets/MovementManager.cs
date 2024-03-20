@@ -6,6 +6,7 @@ public class MovementManager : MonoBehaviour
 {
 
     [SerializeField] Player player;
+    [SerializeField] PlayerSO playerSO;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class MovementManager : MonoBehaviour
     public void MovePlayer(Vector3 direction)
     {
         Rigidbody2D rigid = player.GetRigid();
-        float speed = player.GetSpeed();
+        float speed = playerSO.speed;
 
         Vector3 curVel = new Vector3(0, rigid.velocity.y, 0);
 
@@ -45,7 +46,7 @@ public class MovementManager : MonoBehaviour
     {
         Rigidbody2D rigid = player.GetRigid();
         Transform trans = player.transform;
-        float jump = player.GetJump();
+        float jump = playerSO.jump;
         float jumpOffset = player.GetJumpOffset();
         float jumpRadius = player.GetJumpRadius();
         LayerMask ground = player.GetGroundLayer();
