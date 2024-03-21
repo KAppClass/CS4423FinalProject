@@ -23,8 +23,10 @@ public class HealthSystem : MonoBehaviour
 
     public void FirstEnemyNegativeHealth(float loss, float multiplier, float time)
     {
-        first.LoseHealth(loss);
+        Debug.Log("This",this);
         first.TempChangeMultiplier(multiplier, time);
+        first.LoseHealth(loss);
+        
     }
 
     public void PlayerLoseHealth(float loss)

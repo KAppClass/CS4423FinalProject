@@ -99,15 +99,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf9ccccdec35b14eab4b7f32873b271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 20
   maxMana: 20
-  health: 10
-  mana: 15
+  health: 20
   speed: 0
   spell: 0
   jump: 15
   healthLossMultiplier: 1
   manaRecovery: 0
+  firstEnemySO: {fileID: 11400000, guid: ec3db1793e863ab4985fdcf11b24ee6b, type: 2}
 --- !u!58 &1818286188045795189
 CircleCollider2D:
   m_ObjectHideFlags: 0
