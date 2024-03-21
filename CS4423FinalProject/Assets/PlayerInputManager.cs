@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Player_Input : MonoBehaviour
 {
-    [SerializeField] MovementManager movement;
     [SerializeField] Player player;
+    [SerializeField] PlayerSO playerSO;
+    [SerializeField] MovementManager movement;
+    [SerializeField] ShootSpell shooter;
 
+    //ShootSpell shooter;
+
+    void Start()
+    {
+        //shooter = this.GetComponent<ShootSpell>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,6 +32,13 @@ public class Player_Input : MonoBehaviour
         if(Input.GetKey(KeyCode.D)) { input.x += 1; }
 
         if(Input.GetKeyDown(KeyCode.Space)) { movement.JumpPlayer(); }
+
+        if( Input.GetMouseButtonDown(0))
+        { 
+            shooter.ShootSpells(playerSO.spell, Camera.main.ScreenToWorldPoint(Input.mousePosition), 0); 
+
+        }
+        
 
         movement.MovePlayer(input);
 
