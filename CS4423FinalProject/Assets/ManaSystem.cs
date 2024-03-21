@@ -19,17 +19,11 @@ public class ManaSystem : MonoBehaviour
         
     }
 
-    public void ReduceMana(int spell)
+    public void ReduceMana(float reduce)
     {
-        switch (spell)
-        {
-            case 0:
-                player.ReduceMana(5f);
-                break;
-            default:
-                Debug.Log("Man Reduction Not working");
-                break;
-        }
+
+        player.ReduceMana(reduce);
+
     }
 
 }

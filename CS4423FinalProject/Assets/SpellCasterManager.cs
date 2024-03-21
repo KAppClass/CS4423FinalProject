@@ -17,7 +17,15 @@ public class SpellCasterManager : MonoBehaviour
         
     }
 
-    public void CastSpell(){}
+    public void CastSpell(int spell)
+    {
+        // switch (spell)
+        // {
+        //     case 0:
+            
+        //     default:
+        // }
+    }
 
     // public FireBall CreateFireBall()
     // {
