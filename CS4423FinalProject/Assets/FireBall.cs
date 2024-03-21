@@ -8,8 +8,9 @@ public class FireBall : MonoBehaviour
     [Header("States")]
 
     [SerializeField] float damage = 2;
-    [SerializeField] float cost = ;
-    [SerializeField] float damageMultiplier;
+    [SerializeField] float cost = 2f;
+    [SerializeField] float speed = 5f;
+    [SerializeField] float damageMultiplier = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,4 +31,9 @@ public class FireBall : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public float GetDamage() {return damage;}
+    public float GetCost() {return cost;}
+    public float GetSpeed() {return speed;}
+    public float GetDamageMultiplier() {return damageMultiplier;}
 }

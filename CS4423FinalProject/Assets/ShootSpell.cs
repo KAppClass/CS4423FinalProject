@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ShootSpell : MonoBehaviour
 {
-    //[SerializeField] PlayerSO playerSO;
+    [Header("Spells")]
     [SerializeField] FireBall fireBall;
+    [Header("Needed Objects")]
     [SerializeField] ManaManager manaManager;
     [SerializeField] PlayerSO playerSO;
     [SerializeField] Player player;
@@ -26,7 +27,7 @@ public class ShootSpell : MonoBehaviour
 
                     if (playerSO.mana >= 5f)
                     {
-                        ShootFireBall(aim, 5f);
+                        ShootFireBall(aim);
                     //player.RecoverMana(5f);
                     manaManager.ReduceMana(5f, type);
                     }
@@ -41,11 +42,11 @@ public class ShootSpell : MonoBehaviour
     }
 
 
-    void ShootFireBall(Vector3 aim, float speed)
+    void ShootFireBall(Vector3 aim)
     {
         FireBall spell = Instantiate(fireBall, transform.position, Quaternion.identity);
         spell.transform.rotation = Quaternion.LookRotation(transform.forward, aim - transform.position);
-        spell.GetComponent<Rigidbody2D>().velocity = spell.transform.up * speed;
+        spell.GetComponent<Rigidbody2D>().velocity = spell.transform.up * fireBall.GetSpeed();
         Destroy(spell,10);
     }
 
