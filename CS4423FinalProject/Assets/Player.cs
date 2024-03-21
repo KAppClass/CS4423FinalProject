@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
             jump = playerSO.jump;
             healthLossMultiplier = playerSO.healthLossMultiplier;
             spell = playerSO.spell;
+            manaRecovery = playerSO.manaRecovery;
         }
 
         
@@ -63,7 +64,6 @@ public class Player : MonoBehaviour
         Debug.Log("PlayerSO " + playerSO.mana);
         Debug.Log("Player " + mana);
 
-        RecoverMana(manaRecovery);
 
     }
 

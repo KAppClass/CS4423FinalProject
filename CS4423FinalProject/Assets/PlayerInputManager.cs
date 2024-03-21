@@ -38,6 +38,10 @@ public class Player_Input : MonoBehaviour
             shooter.ShootSpells(playerSO.spell, Camera.main.ScreenToWorldPoint(Input.mousePosition)); 
 
         }
+        else
+        {
+            //player.RecoverMana(playerSO.manaRecovery);
+        }
 
         
 

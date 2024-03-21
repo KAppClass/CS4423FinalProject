@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   maxMana: 10
-  health: 10
-  mana: 5
+  health: 5
+  mana: 0
   speed: 7
   spell: 0
   jump: 15
   healthLossMultiplier: 1
-  manaRecovery: 2
+  manaRecovery: 0.5

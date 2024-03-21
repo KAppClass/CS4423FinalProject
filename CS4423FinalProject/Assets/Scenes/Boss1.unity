@@ -135,10 +135,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 850504223}
-    - target: {fileID: 1495447908045654854, guid: 36513496e1778934aa53d3b529e4711b, type: 3}
-      propertyPath: playerSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
     - target: {fileID: 7201087493285532429, guid: 36513496e1778934aa53d3b529e4711b, type: 3}
       propertyPath: m_Name
       value: MovementManager
@@ -201,13 +197,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 850504223}
-    - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: manaManager
       value: 
       objectReference: {fileID: 1896130244}
+    - target: {fileID: 5504486188786155122, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
+      propertyPath: mana
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504486188786155122, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
+      propertyPath: maxMana
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6299388907428627851, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: movement
       value: 
@@ -1302,10 +1302,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 850504223}
-    - target: {fileID: 5459673567473337959, guid: 5284cdb82a4a07f4c9d267ed33b696e6, type: 3}
-      propertyPath: playerSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
