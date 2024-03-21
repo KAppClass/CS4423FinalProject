@@ -35,14 +35,9 @@ public class Player_Input : MonoBehaviour
 
         if( Input.GetMouseButtonDown(0))
         { 
-            shooter.ShootSpells(playerSO.spell, Camera.main.ScreenToWorldPoint(Input.mousePosition)); 
+            shooter.ShootSpells(playerSO.spell, Camera.main.ScreenToWorldPoint(Input.mousePosition), 0); 
 
         }
-        else
-        {
-            //player.RecoverMana(playerSO.manaRecovery);
-        }
-
         
 
         movement.MovePlayer(input);

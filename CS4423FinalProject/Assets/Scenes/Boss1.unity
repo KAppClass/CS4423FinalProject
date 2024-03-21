@@ -202,11 +202,11 @@ PrefabInstance:
       objectReference: {fileID: 1896130244}
     - target: {fileID: 5504486188786155122, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: mana
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5504486188786155122, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: maxMana
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6299388907428627851, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: movement

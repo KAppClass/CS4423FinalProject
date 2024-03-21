@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class FireBall : MonoBehaviour
 {
+
+    [Header("States")]
+
+    [SerializeField] float damage = 2;
+    [SerializeField] float cost = ;
+    [SerializeField] float damageMultiplier;
+
     // Start is called before the first frame update
     void Start()
     {

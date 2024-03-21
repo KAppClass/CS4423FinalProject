@@ -16,7 +16,7 @@ public class ShootSpell : MonoBehaviour
         //transform.SetParent(creature.transform);
     }
 
-    public void ShootSpells(int spell, Vector3 aim)
+    public void ShootSpells(int spell, Vector3 aim, int type)
     {
 
         switch (spell)
@@ -28,7 +28,7 @@ public class ShootSpell : MonoBehaviour
                     {
                         ShootFireBall(aim, 5f);
                     //player.RecoverMana(5f);
-                    manaManager.ReduceMana(5f);
+                    manaManager.ReduceMana(5f, type);
                     }
                     
             

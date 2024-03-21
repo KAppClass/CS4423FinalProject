@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] PlayerSO playerSO;
 
-    [SerializeField] float maxHealth;
+    [SerializeField] float maxHealth = 10;
     [SerializeField] float maxMana;
     [SerializeField] float health;
     [SerializeField] float mana;
@@ -44,8 +44,10 @@ public class Player : MonoBehaviour
             manaRecovery = playerSO.manaRecovery;
         }
 
-        
+         Debug.Log("PlayerSO " + playerSO.mana);
+        Debug.Log("Player " + mana);
 
+        RecoverMana(manaRecovery);
         
     }
 
@@ -60,9 +62,6 @@ public class Player : MonoBehaviour
             playerSO.jump = jump;
             playerSO.healthLossMultiplier = healthLossMultiplier;
         }
-
-        Debug.Log("PlayerSO " + playerSO.mana);
-        Debug.Log("Player " + mana);
 
 
     }
@@ -91,6 +90,7 @@ public class Player : MonoBehaviour
 
     public void ReduceMana(float cost)
     {
+        
         float afterMana = this.mana - cost;
 
         if (afterMana <= 0)
@@ -99,13 +99,16 @@ public class Player : MonoBehaviour
         {
             this.mana = afterMana;
         }
+         Debug.Log("PlayerSO " + playerSO.mana);
+        Debug.Log("Player " + mana);
+
     }
 
     public void RecoverMana(float recover){
         StartCoroutine(RecoverManaRoutine());
         IEnumerator RecoverManaRoutine(){
             while(true){
-                yield return new WaitForSeconds(0.0000001f);
+                yield return new WaitForSeconds(1);
                 GainMana(recover);
             }
         }
@@ -120,6 +123,9 @@ public class Player : MonoBehaviour
         {
             this.mana = afterMana;
         }
+         Debug.Log("PlayerSO " + playerSO.mana);
+        Debug.Log("Player " + mana);
+
     }
 
     public void ChangeMaxHealth(float max)

@@ -19,10 +19,11 @@ public class ManaManager : MonoBehaviour
         
     }
 
-    public void ReduceMana(float reduce)
+    public void ReduceMana(float reduce, int type)
     {
 
-        player.ReduceMana(reduce);
+        if ( type == 0)
+            player.ReduceMana(reduce);
 
     }
 

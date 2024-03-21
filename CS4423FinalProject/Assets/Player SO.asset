@@ -15,7 +15,7 @@ MonoBehaviour:
   maxHealth: 5
   maxMana: 10
   health: 5
-  mana: 0
+  mana: 2
   speed: 7
   spell: 0
   jump: 15
