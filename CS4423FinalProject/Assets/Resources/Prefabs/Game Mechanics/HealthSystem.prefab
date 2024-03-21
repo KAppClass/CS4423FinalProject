@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
+  first: {fileID: 6811089445879896588, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}

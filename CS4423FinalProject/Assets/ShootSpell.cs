@@ -6,8 +6,12 @@ public class ShootSpell : MonoBehaviour
 {
     [Header("Spells")]
     [SerializeField] FireBall fireBall;
-    [Header("Needed Objects")]
+
+    [Header("Needed Systems")]
     [SerializeField] ManaManager manaManager;
+    
+
+    [Header("Player")]
     [SerializeField] PlayerSO playerSO;
     [SerializeField] Player player;
     
@@ -25,11 +29,10 @@ public class ShootSpell : MonoBehaviour
             case 0:
 
 
-                    if (playerSO.mana >= 5f)
+                    if (playerSO.mana >= fireBall.GetCost())
                     {
                         ShootFireBall(aim);
-                    //player.RecoverMana(5f);
-                    manaManager.ReduceMana(5f, type);
+                        manaManager.ReduceMana(fireBall.GetCost(), type);
                     }
                     
             

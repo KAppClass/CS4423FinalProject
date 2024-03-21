@@ -5,12 +5,15 @@ using UnityEngine;
 public class FireBall : MonoBehaviour
 {
 
-    [Header("States")]
+    [Header("Stats")]
 
-    [SerializeField] float damage = 2;
+    [SerializeField] float damage = 2f;
     [SerializeField] float cost = 2f;
     [SerializeField] float speed = 5f;
     [SerializeField] float damageMultiplier = 2f;
+    [SerializeField] float multiplierTime = 4f;
+
+    [SerializeField] HealthSystem healthSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,11 @@ public class FireBall : MonoBehaviour
     {
         if (obj.gameObject.tag == "Enviroment")
         {
+            Destroy(this.gameObject);
+        }
+        if (obj.gameObject.tag == "Enemy1")
+        {
+            healthSystem.FirstEnemyNegativeHealth(damage, damageMultiplier, multiplierTime);
             Destroy(this.gameObject);
         }
     }

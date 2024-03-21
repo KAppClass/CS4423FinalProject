@@ -7,13 +7,14 @@ public class Player : MonoBehaviour
 
     [SerializeField] PlayerSO playerSO;
 
+    [Header("Stats")]
+
     [SerializeField] float maxHealth = 10;
     [SerializeField] float maxMana;
     [SerializeField] float health;
     [SerializeField] float mana;
     [SerializeField] float speed;
     [SerializeField] int spell;
-
     [SerializeField] float jump = 15f;
     [SerializeField] float healthLossMultiplier = 1f;
     [SerializeField] float manaRecovery;
@@ -44,8 +45,8 @@ public class Player : MonoBehaviour
             manaRecovery = playerSO.manaRecovery;
         }
 
-         Debug.Log("PlayerSO " + playerSO.mana);
-        Debug.Log("Player " + mana);
+         //Debug.Log("PlayerSO " + playerSO.mana);
+        //Debug.Log("Player " + mana);
 
         RecoverMana(manaRecovery);
         
@@ -99,8 +100,8 @@ public class Player : MonoBehaviour
         {
             this.mana = afterMana;
         }
-         Debug.Log("PlayerSO " + playerSO.mana);
-        Debug.Log("Player " + mana);
+         //Debug.Log("PlayerSO " + playerSO.mana);
+        //Debug.Log("Player " + mana);
 
     }
 
@@ -123,8 +124,8 @@ public class Player : MonoBehaviour
         {
             this.mana = afterMana;
         }
-         Debug.Log("PlayerSO " + playerSO.mana);
-        Debug.Log("Player " + mana);
+        //Debug.Log("PlayerSO " + playerSO.mana);
+        //Debug.Log("Player " + mana);
 
     }
 
