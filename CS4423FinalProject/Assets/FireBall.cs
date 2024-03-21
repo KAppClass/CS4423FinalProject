@@ -38,7 +38,7 @@ public class FireBall : MonoBehaviour
             Debug.Log("This",this);
             
             healthSystem.FirstEnemyNegativeHealth(damage, damageMultiplier, multiplierTime);
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 

@@ -5,5 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/FirstEnemySo")]
 public class FirstEnemySO : ScriptableObject
 {
-    public float health = 20;
+    public float maxHealth = 20;
+    public float health;
 }

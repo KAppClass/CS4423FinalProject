@@ -8,8 +8,8 @@ public class FirstEnemy : MonoBehaviour
 
     [SerializeField] float maxHealth = 20f;
     [SerializeField] float maxMana = 20f;
-    [SerializeField] private float health;
-    [SerializeField] static float mana = 20f;
+    [SerializeField] float health;
+    [SerializeField] float mana = 20f;
     [SerializeField] float speed;
     [SerializeField] int spell;
     [SerializeField] float jump = 15f;
@@ -18,24 +18,22 @@ public class FirstEnemy : MonoBehaviour
 
     [SerializeField] FirstEnemySO firstEnemySO;
 
-    private float currHealth;
     private float defaultMultiplier;
     
     //[SerializeField]
     // Start is called before the first frame update
     void Start()
     {
-        // if (firstEnemySO != null)
-        // {
+        if (firstEnemySO != null)
+        {
 
-        //     health = firstEnemySO.health;
+            maxHealth = firstEnemySO.maxHealth;
+            health = firstEnemySO.maxHealth;
 
-        // }
-        // defaultMultiplier = healthLossMultiplier;
-        // TestText.singleton.ShowHealth(health);
-
-        currHealth = health;
-        Debug.Log(currHealth);
+        }
+        //health = maxHealth;
+        defaultMultiplier = healthLossMultiplier;
+        TestText.singleton.ShowHealth(health);
 
     }
 
@@ -52,20 +50,31 @@ public class FirstEnemy : MonoBehaviour
 
     public void LoseHealth(float loss)
     {
-        //Debug.Log("Current Health: " + firstEnemySO.health);
-        float afterHealth = currHealth - (loss * defaultMultiplier);
-        Debug.Log("Loss: " + afterHealth);
-        if (afterHealth <= 0)
-            { //this.health = afterHealth; 
-            Destroy(this);}
-        else
+
+        Debug.Log("Health: " + health);
+        health -= loss * defaultMultiplier;
+        Debug.Log("Health: " + health);
+        TestText.singleton.ShowHealth(health);
+
+        if (health <= 0)
         {
-            currHealth = afterHealth;
-            Debug.Log("Health: " + currHealth);
-            Debug.Log("This",this);
-            TestText.singleton.ShowHealth(health);
-            
+            TestText.singleton.ShowHealth(-100);
         }
+
+        //Debug.Log("Current Health: " + firstEnemySO.health);
+        // float afterHealth = health - (loss * defaultMultiplier);
+        // Debug.Log("Loss: " + afterHealth);
+        // if (afterHealth <= 0)
+        //     { //this.health = afterHealth; 
+        //     Destroy(this);}
+        // else
+        // {
+        //     health = afterHealth;
+        //     Debug.Log("Health: " + health);
+        //     Debug.Log("This",this);
+        //     TestText.singleton.ShowHealth(health);
+            
+        // }
     }
 
     public void TempChangeMultiplier(float multiplier, float time)

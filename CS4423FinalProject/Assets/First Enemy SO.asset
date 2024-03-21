@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d67f1e53861c5439c5f8510bc3d879, type: 3}
   m_Name: First Enemy SO
   m_EditorClassIdentifier: 
-  health: 20
+  maxHealth: 50
+  health: 50
