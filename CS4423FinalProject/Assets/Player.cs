@@ -7,16 +7,16 @@ public class Player : MonoBehaviour
 
     [SerializeField] PlayerSO playerSO;
 
-    float maxHealth = 10f;
-    float maxMana = 5f;
-    float health = 10f;
-    float mana = 5f;
-    float speed = 7f;
-    int spell = 0;
+    [SerializeField] float maxHealth;
+    [SerializeField] float maxMana;
+    [SerializeField] float health;
+    [SerializeField] float mana;
+    [SerializeField] float speed;
+    [SerializeField] int spell;
 
-    float jump = 15f;
-    float healthLossMultiplier = 1f;
-    float manaRecovery = 0.000001f;
+    [SerializeField] float jump = 15f;
+    [SerializeField] float healthLossMultiplier = 1f;
+    [SerializeField] float manaRecovery;
 
     [Header("Physics")]
 
@@ -60,13 +60,10 @@ public class Player : MonoBehaviour
             playerSO.healthLossMultiplier = healthLossMultiplier;
         }
 
-        //Debug.Log("PlayerSO " + playerSO.mana);
+        Debug.Log("PlayerSO " + playerSO.mana);
         Debug.Log("Player " + mana);
 
-        // if ( !Input.GetMouseButtonDown(0))
-        // {
-        //     RecoverMana(manaRecovery);
-        // }
+        RecoverMana(manaRecovery);
 
     }
 

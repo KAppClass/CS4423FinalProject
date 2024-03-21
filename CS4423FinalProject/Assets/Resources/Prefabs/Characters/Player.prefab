@@ -102,6 +102,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
+  maxHealth: 10
+  maxMana: 5
+  health: 10
+  mana: 5
+  speed: 7
+  spell: 0
+  jump: 15
+  healthLossMultiplier: 1
+  manaRecovery: 0.000001
   ground:
     serializedVersion: 2
     m_Bits: 8
@@ -224,7 +233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireBall: {fileID: 2942213477455594466, guid: d3baaae8f90438e40852ce5e19a65925, type: 3}
-  manaSystem: {fileID: 0}
+  manaManager: {fileID: 0}
+  playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
+  player: {fileID: 5504486188786155122}
 --- !u!1 &7601642731534156779
 GameObject:
   m_ObjectHideFlags: 0

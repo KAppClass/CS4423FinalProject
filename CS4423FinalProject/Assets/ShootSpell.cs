@@ -6,8 +6,9 @@ public class ShootSpell : MonoBehaviour
 {
     //[SerializeField] PlayerSO playerSO;
     [SerializeField] FireBall fireBall;
-    [SerializeField] ManaSystem manaSystem;
+    [SerializeField] ManaManager manaManager;
     [SerializeField] PlayerSO playerSO;
+    [SerializeField] Player player;
     
     // Start is called before the first frame update
     void Start()
@@ -24,13 +25,12 @@ public class ShootSpell : MonoBehaviour
 
 
                     if (playerSO.mana >= 5f)
-                    ShootFireBall(aim, 5f);
-                    manaSystem.ReduceMana(spell);
-
-
-                
-
-
+                    {
+                        ShootFireBall(aim, 5f);
+                    //player.RecoverMana(5f);
+                    manaManager.ReduceMana(5f);
+                    }
+                    
             
                 break;
             default:

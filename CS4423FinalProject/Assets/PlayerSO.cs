@@ -15,6 +15,6 @@ public class PlayerSO : ScriptableObject
 
     public float jump = 15f;
     public float healthLossMultiplier = 1f;
-    public float manaRecovery = 0.000001f;
+    public float manaRecovery = 0.02f;
 
 }

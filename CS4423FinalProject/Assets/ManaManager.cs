@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManaSystem : MonoBehaviour
+public class ManaManager : MonoBehaviour
 {
     [SerializeField] Player player;
-    [SerializeField] PlayerSO playerSO;
+    //[SerializeField] PlayerSO playerSO;
 
     // Start is called before the first frame update
     void Start()
