@@ -24,7 +24,6 @@ public class ManaManager : MonoBehaviour
     {
 
         
-
         switch (type)
         {
             case 0:

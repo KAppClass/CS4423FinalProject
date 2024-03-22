@@ -13,7 +13,6 @@ public class FireBall : MonoBehaviour
     [SerializeField] float damageMultiplier = 2f;
     [SerializeField] float multiplierTime = 4f;
 
-    [SerializeField] GameObject parent;
     [SerializeField] HealthSystem healthSystem;
 
     // Start is called before the first frame update
