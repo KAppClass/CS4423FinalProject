@@ -7,7 +7,8 @@ public class FirstEnemy : MonoBehaviour
     [Header("Stats")]
 
     [SerializeField] float maxMana;
-    [SerializeField] private float health;
+    [SerializeField] float maxHealth;
+     private float health;
     private float mana;
     [SerializeField] float speed;
     [SerializeField] int spell;
@@ -27,12 +28,15 @@ public class FirstEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TestText.singleton.ShowHealth(health);
-        defaultMultiplier = healthLossMultiplier;
-         RecoverMana(manaRecovery);
-
-        
         //TestText.singleton.ShowHealth(health);
+        defaultMultiplier = healthLossMultiplier;
+        mana = maxMana;
+        health = maxHealth;
+        //  RecoverMana(manaRecovery);
+
+        Attack(manaRecovery);
+        //TestText.singleton.ShowHealth(health);
+        Debug.Log(health,this);
 
     }
 
@@ -42,9 +46,9 @@ public class FirstEnemy : MonoBehaviour
         
        // Debug.Log("Health: " + health, this);
        // Debug.Log("Health SO: " + (firstEnemySO.health-1), this);
-
+        
         //Debug.Log("Update: " + GetInstanceID());
-        TestText.singleton.ShowHealth(health);
+        TestText.singleton.ShowHealth(mana);
         shooter.ShootSpells(spell, player.transform.position, 1);
     }
 
@@ -54,8 +58,8 @@ public class FirstEnemy : MonoBehaviour
         
         health -= loss * defaultMultiplier;
         Debug.Log("Health: " + health,this);
+        TestText.singleton.ShowHealth(health);
 
-        
 
          if (health <= 0)
         {
@@ -82,6 +86,7 @@ public class FirstEnemy : MonoBehaviour
     {
         
         this.mana -= cost;
+        Debug.Log("Hit Mana: " + mana, this);
 
         if (mana <= 0)
             { this.mana = 0; }
@@ -94,8 +99,8 @@ public class FirstEnemy : MonoBehaviour
     public void RecoverMana(float recover){
         StartCoroutine(RecoverManaRoutine());
         IEnumerator RecoverManaRoutine(){
-            while(true){
-                yield return new WaitForSeconds(1);
+            while(mana > maxMana){
+                yield return new WaitForSeconds(0.5f);
                 GainMana(recover);
             }
         }
@@ -115,6 +120,29 @@ public class FirstEnemy : MonoBehaviour
 
     }
 
+    void Attack(float recover)
+    {
+        while(health > 0){
+            StartCoroutine(AttackRoutine());
+            IEnumerator AttackRoutine(){
+                    while (mana > 0)
+                    {
+                        //Debug.Log("Hit Mana: " + mana, this);
+                        shooter.ShootSpells(spell, player.transform.position, 1);
+                        yield return new WaitForSeconds(5f);
+                    }
+                    
+                    RecoverMana(recover);
+                    yield return null;
+                }
+        }
+
+
+        
+    }
+
     public float GetHealth() {return health;}
-    public float GetMana() {return mana;}
+    public float GetMana() {
+        
+        return mana;}
 }

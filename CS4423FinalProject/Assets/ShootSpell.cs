@@ -40,6 +40,7 @@ public class ShootSpell : MonoBehaviour
 
                     if ( mana >= fireBall.GetCost())
                     {
+                        
                         ShootFireBall(aim);
                         manaManager.ReduceMana(fireBall.GetCost(), type);
                     }

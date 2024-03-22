@@ -265,6 +265,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 564213737915029670, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 564213737915029670, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -292,6 +296,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
+      propertyPath: first
+      value: 
+      objectReference: {fileID: 2050777006}
     - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: manaManager
       value: 
@@ -1806,20 +1814,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2296808870615340555, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2639746183589016876, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.14
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 2639746183589016876, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.35
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 5706842056928323228, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6582888127244295214, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
+      propertyPath: first
+      value: 
+      objectReference: {fileID: 2050777006}
     - target: {fileID: 6582888127244295214, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: player
       value: 
@@ -1836,6 +1848,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 850504223}
+    - target: {fileID: 6811089445879896588, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
+      propertyPath: maxMana
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811089445879896588, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8236069118127146054, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: m_BodyType
       value: 2
