@@ -8,8 +8,8 @@ public class FirstEnemy : MonoBehaviour
 
     [SerializeField] float maxMana;
     [SerializeField] float maxHealth;
-     private float health;
-    private float mana;
+    [SerializeField] private float health;
+    [SerializeField] private float mana;
     [SerializeField] float speed;
     [SerializeField] int spell;
     [SerializeField] float jump = 15f;
@@ -30,8 +30,8 @@ public class FirstEnemy : MonoBehaviour
     {
         //TestText.singleton.ShowHealth(health);
         defaultMultiplier = healthLossMultiplier;
-        mana = maxMana;
-        health = maxHealth;
+        //mana = maxMana;
+        //health = maxHealth;
         //  RecoverMana(manaRecovery);
 
         Attack(manaRecovery);
@@ -49,7 +49,7 @@ public class FirstEnemy : MonoBehaviour
         
         //Debug.Log("Update: " + GetInstanceID());
         TestText.singleton.ShowHealth(mana);
-        shooter.ShootSpells(spell, player.transform.position, 1);
+        //shooter.ShootSpells(spell, player.transform.position, 1);
     }
 
     public void LoseHealth(float loss)
@@ -86,7 +86,7 @@ public class FirstEnemy : MonoBehaviour
     {
         
         this.mana -= cost;
-        Debug.Log("Hit Mana: " + mana, this);
+        //Debug.Log("Hit Mana: " + mana, this);
 
         if (mana <= 0)
             { this.mana = 0; }
@@ -97,13 +97,12 @@ public class FirstEnemy : MonoBehaviour
     }
 
     public void RecoverMana(float recover){
-        StartCoroutine(RecoverManaRoutine());
-        IEnumerator RecoverManaRoutine(){
+
             while(mana > maxMana){
-                yield return new WaitForSeconds(0.5f);
+                Debug.Log("Hello " + mana, this);
                 GainMana(recover);
             }
-        }
+
     }
 
     public void GainMana(float gain)
@@ -115,30 +114,49 @@ public class FirstEnemy : MonoBehaviour
         {
             this.mana = afterMana;
         }
-        //Debug.Log("PlayerSO " + playerSO.mana);
+        Debug.Log("Recovered Mana:  " + mana);
         //Debug.Log("Player " + mana);
 
     }
 
     void Attack(float recover)
     {
-        while(health > 0){
-            StartCoroutine(AttackRoutine());
-            IEnumerator AttackRoutine(){
-                    while (mana > 0)
-                    {
-                        //Debug.Log("Hit Mana: " + mana, this);
-                        shooter.ShootSpells(spell, player.transform.position, 1);
-                        yield return new WaitForSeconds(5f);
-                    }
-                    
-                    RecoverMana(recover);
-                    yield return null;
+
+        StartCoroutine(AttackRoutine());
+        IEnumerator AttackRoutine()
+        {
+            while(true){
+                Debug.Log("Mana: " + mana, this);
+                if (health <= 0)
+                    break;
+                    //Debug.Log("Hit Mana: " + mana, this);
+                if(mana > 0)
+                {
+                    if (health <= 0)
+                    break;
+                    //Debug.Log("Hit Mana: " + mana, this);
+                    shooter.ShootSpells(spell, player.transform.position, 1);              
+                    //GainMana(recover);
+                    yield return new WaitForSeconds(5);
+                    if (health <= 0)
+                    break;
+                    //Debug.Log("Hit Mana: " + mana, this);
                 }
+
+                else
+                {
+                    Debug.Log("Hit Mana", this);
+                    RecoverMana(recover);
+                    //Debug.Log("Hit Mana: " + mana, this);
+                }
+
+                yield return null;
+                
+            }
         }
 
-
-        
+                
+ 
     }
 
     public float GetHealth() {return health;}
