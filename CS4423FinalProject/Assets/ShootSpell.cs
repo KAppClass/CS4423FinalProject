@@ -14,6 +14,7 @@ public class ShootSpell : MonoBehaviour
     [Header("Player")]
     [SerializeField] PlayerSO playerSO;
     [SerializeField] Player player;
+    [SerializeField] FirstEnemy first;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,8 @@ public class ShootSpell : MonoBehaviour
 
     public void ShootSpells(int spell, Vector3 aim, int type)
     {
+
+        float mana = first.GetMana();
 
         switch (spell)
         {
@@ -34,7 +37,12 @@ public class ShootSpell : MonoBehaviour
                         ShootFireBall(aim);
                         manaManager.ReduceMana(fireBall.GetCost(), type);
                     }
-                    
+
+                    if ( mana >= fireBall.GetCost())
+                    {
+                        ShootFireBall(aim);
+                        manaManager.ReduceMana(fireBall.GetCost(), type);
+                    }
             
                 break;
             default:

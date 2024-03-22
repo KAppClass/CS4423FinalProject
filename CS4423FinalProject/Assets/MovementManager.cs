@@ -7,6 +7,7 @@ public class MovementManager : MonoBehaviour
 
     [SerializeField] Player player;
     [SerializeField] PlayerSO playerSO;
+    [SerializeField] FirstEnemy first;
 
     // Start is called before the first frame update
     void Start()

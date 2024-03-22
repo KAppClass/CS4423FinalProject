@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 1.81, y: -1.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2639746183589016876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5084161845900860055
@@ -99,15 +100,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf9ccccdec35b14eab4b7f32873b271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  maxMana: 20
-  health: 20
+  maxMana: 0
+  health: 50
   speed: 0
   spell: 0
   jump: 15
   healthLossMultiplier: 1
   manaRecovery: 0
-  firstEnemySO: {fileID: 11400000, guid: ec3db1793e863ab4985fdcf11b24ee6b, type: 2}
+  shooter: {fileID: 6582888127244295214}
+  player: {fileID: 0}
 --- !u!58 &1818286188045795189
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -170,3 +171,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &5706842056928323228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2639746183589016876}
+  - component: {fileID: 6582888127244295214}
+  m_Layer: 0
+  m_Name: Enemy1SpellShooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2639746183589016876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5706842056928323228}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.26, y: -0.3, z: 0.46041733}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2245201346553347570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6582888127244295214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5706842056928323228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c81a665f5817144a807482a69502cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireBall: {fileID: 2942213477455594466, guid: d3baaae8f90438e40852ce5e19a65925, type: 3}
+  manaManager: {fileID: 0}
+  playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
+  player: {fileID: 0}

@@ -13,6 +13,7 @@ public class FireBall : MonoBehaviour
     [SerializeField] float damageMultiplier = 2f;
     [SerializeField] float multiplierTime = 4f;
 
+    [SerializeField] GameObject parent;
     [SerializeField] HealthSystem healthSystem;
 
     // Start is called before the first frame update
@@ -33,12 +34,16 @@ public class FireBall : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        if (obj.gameObject.tag == "Enemy1")
+        if ((obj.gameObject.tag == "Enemy1"))
         {
-            Debug.Log("This",this);
+            //Debug.Log("This",this);
             
             healthSystem.FirstEnemyNegativeHealth(damage, damageMultiplier, multiplierTime);
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
+        }
+        if ((obj.gameObject.tag == "Player"))
+        {
+
         }
     }
 

@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpRadius = 0.25f;
 
     Rigidbody2D rigid;
+    private float defaultMultiplier;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
          //Debug.Log("PlayerSO " + playerSO.mana);
         //Debug.Log("Player " + mana);
 
+        defaultMultiplier = healthLossMultiplier;
         RecoverMana(manaRecovery);
         
     }
@@ -69,23 +71,34 @@ public class Player : MonoBehaviour
 
     public void LoseHealth(float loss)
     {
-        float afterHealth = this.health - (loss * healthLossMultiplier);
-        if (afterHealth <= 0)
+        this.health -= loss * healthLossMultiplier;
+        if (this.health <= 0)
             { this.health = 0; }
-        else
+        
+    }
+
+    public void TempChangeMultiplier(float multiplier, float time)
+    {
+        
+        defaultMultiplier = multiplier;
+        
+        float timer = 0;
+        while(timer < time)
         {
-            this.health = afterHealth;
+            timer+=Time.deltaTime;
+            //Debug.Log(""+defaultMultiplier + " Time: " + timer);
         }
+        defaultMultiplier = healthLossMultiplier;
     }
 
     public void GainHealth(float gain)
     {
-        float afterHealth = this.health + gain;
-        if (afterHealth >= maxHealth)
+        health += gain;
+        if (health >= maxHealth)
             { this.health = maxHealth; }
         else
         {
-            this.health = afterHealth;
+            Debug.Log("Die Player!");
         }
     }
 
@@ -133,6 +146,8 @@ public class Player : MonoBehaviour
     {
         maxHealth = max;
     }
+
+    
 
     public Rigidbody2D GetRigid() { return this.rigid; }
     public float GetSpeed() { return this.speed; }
