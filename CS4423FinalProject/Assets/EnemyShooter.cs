@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootSpell : MonoBehaviour
+public class EnemyShooter : MonoBehaviour
 {
     [Header("Spells")]
     [SerializeField] FireBall fireBall;
@@ -11,10 +11,9 @@ public class ShootSpell : MonoBehaviour
     [SerializeField] ManaManager manaManager;
     
 
-    [Header("Player")]
-    [SerializeField] PlayerSO playerSO;
-
-
+    [Header("Enemy")]
+    [SerializeField] EnemySO enemySO;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,14 +23,16 @@ public class ShootSpell : MonoBehaviour
     public void ShootSpells(int spell, Vector3 aim, int type)
     {
 
+
         switch (spell)
         {
             case 0:
-                     Debug.Log("Shooter User1: " + playerSO.mana,this);
 
-                    if (playerSO.mana >= fireBall.GetCost())
+                    //Debug.Log("Enemy Mana: " + enemySO.firstMana);
+                     
+                    if ( enemySO.firstMana >= fireBall.GetCost())
                     {
-                        Debug.Log("Shooter User2: " + playerSO.mana,this);
+                        
                         ShootFireBall(aim);
                         manaManager.ReduceMana(fireBall.GetCost(), type);
                     }
@@ -52,5 +53,4 @@ public class ShootSpell : MonoBehaviour
         spell.GetComponent<Rigidbody2D>().velocity = spell.transform.up * fireBall.GetSpeed();
         Destroy(spell,10);
     }
-
 }

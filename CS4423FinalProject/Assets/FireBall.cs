@@ -37,6 +37,8 @@ public class FireBall : MonoBehaviour
         {
             //Debug.Log("This",this);
             
+            if(healthSystem == null)
+                Debug.Log("Health is Null");
             healthSystem.FirstEnemyNegativeHealth(damage, damageMultiplier, multiplierTime);
             Destroy(this.gameObject);
         }

@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
             playerSO.healthLossMultiplier = healthLossMultiplier;
         }
 
-
+        //Debug.Log("Mana: " + mana);
     }
 
     public void LoseHealth(float loss)

@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireBall: {fileID: 2942213477455594466, guid: d3baaae8f90438e40852ce5e19a65925, type: 3}
-  manaManager: {fileID: 0}
-  playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
+  manaManager: {fileID: 3891918268968969596, guid: 043f497aeae6a544ea8f0f94ce17d827, type: 3}
+  playerSO: {fileID: 0}
   player: {fileID: 0}
+  first: {fileID: 0}

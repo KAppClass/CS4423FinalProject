@@ -7,7 +7,7 @@ public class FirstEnemy : MonoBehaviour
     [Header("Stats")]
 
     [SerializeField] float maxMana;
-    float curHealth;
+    float curHealth = 5;
     float mana;
     [SerializeField] float speed;
     [SerializeField] int spell;
@@ -18,7 +18,7 @@ public class FirstEnemy : MonoBehaviour
     [Header("Necessary Systems")]
 
     [SerializeField] EnemySO enemySO;
-    [SerializeField] ShootSpell shooter;
+    [SerializeField] EnemyShooter shooter;
     [SerializeField] Player player;
 
 
@@ -42,7 +42,7 @@ public class FirstEnemy : MonoBehaviour
         
         }
 
-        Debug.Log("Starting Mana " + mana);
+        //Debug.Log("Current Health " + curHealth);
 
         defaultMultiplier = healthLossMultiplier;
 
@@ -70,20 +70,15 @@ public class FirstEnemy : MonoBehaviour
 
     public void LoseHealth(float loss)
     {
-        Debug.Log("Health Before: "+ this.curHealth, this);
-        
-        Debug.Log("Damage " + loss);
-        this.curHealth -= loss;
-        //TestText.singleton.ShowHealth(healthResult);
-        Debug.Log("Health After: "+ curHealth, this);
-         if (this.curHealth <= 0)
+        //Debug.Log("Current Health In Lose" + curHealth);
+       curHealth -= loss;
+    if (curHealth <= 0)
         {
-            this.curHealth = 0;
+            //this.curHealth = 0;
             Debug.Log("Dead", this);
             //this.enabled=false;
         }
-
-        
+        //Debug.Log("Current Health After Lose" + curHealth);
     }
 
     public void TempChangeMultiplier(float multiplier, float time)
@@ -137,7 +132,7 @@ public class FirstEnemy : MonoBehaviour
 
     void Attack()
     {
-        
+        //Debug.Log("Current Health " + curHealth);
 
         //Debug.Log("I'm Working");
         StartCoroutine(AttackRoutine());
@@ -185,4 +180,6 @@ public class FirstEnemy : MonoBehaviour
     public float GetHealth() {return curHealth;}
     public float GetMana() {return mana;}
     void SetReducedMana(float mana) {this.mana -= mana;}
+    void SetReducedHealth(float health) {
+}
 }
