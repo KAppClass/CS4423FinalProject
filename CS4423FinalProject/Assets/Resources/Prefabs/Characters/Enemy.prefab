@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8236069118127146054}
   - component: {fileID: 1041845649056050772}
   m_Layer: 6
-  m_Name: Enemy1
+  m_Name: Enemy
   m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,17 +163,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMana: 20
-  maxHealth: 10
-  health: 10
   mana: 20
   speed: 0
   spell: 0
   jump: 15
-  healthLossMultiplier: 1
+  healthLossMultiplier: 2
   manaRecovery: 1
+  enemySO: {fileID: 11400000, guid: ec3db1793e863ab4985fdcf11b24ee6b, type: 2}
   shooter: {fileID: 6582888127244295214}
-  player: {fileID: 0}
-  test: {fileID: 0}
+  player: {fileID: 5504486188786155122, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
 --- !u!1 &5706842056928323228
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +198,7 @@ Transform:
   m_GameObject: {fileID: 5706842056928323228}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 1.38, z: 0.46041733}
+  m_LocalPosition: {x: -0.23, y: 0.57, z: 0.46041733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -222,4 +220,4 @@ MonoBehaviour:
   manaManager: {fileID: 0}
   playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
   player: {fileID: 0}
-  first: {fileID: 0}
+  first: {fileID: 1041845649056050772}

@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6d67f1e53861c5439c5f8510bc3d879, type: 3}
-  m_Name: First Enemy SO
+  m_Name: Enemy SO
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 50
+  firstHealth: 10
+  firstMana: 20
+  firstMaxMana: 20

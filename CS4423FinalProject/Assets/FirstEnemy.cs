@@ -7,20 +7,19 @@ public class FirstEnemy : MonoBehaviour
     [Header("Stats")]
 
     [SerializeField] float maxMana;
-    [SerializeField] float maxHealth;
-    [SerializeField] private float health;
+    private float health = 10f;
     [SerializeField] private float mana;
     [SerializeField] float speed;
     [SerializeField] int spell;
     [SerializeField] float jump = 15f;
-    [SerializeField] float healthLossMultiplier = 1f;
+    [SerializeField] float healthLossMultiplier;
     [SerializeField] float manaRecovery;
 
     [Header("Necessary Systems")]
 
+    [SerializeField] EnemySO enemySO;
     [SerializeField] ShootSpell shooter;
     [SerializeField] Player player;
-    [SerializeField] TestText test;
 
 
     private float defaultMultiplier;
@@ -32,14 +31,24 @@ public class FirstEnemy : MonoBehaviour
     void Start()
     {
         
+        if(enemySO != null)
+        {
+             if(this.tag == "Enemy1")
+            {
+                this.health = enemySO.firstHealth;
+                this.mana = enemySO.firstMana;
+                this.maxMana = enemySO.firstMaxMana;
+            }  
+        
+        }
 
-        if(mana != maxMana)
-            mana = maxMana;
+        Debug.Log("Starting Health " + health);
 
         defaultMultiplier = healthLossMultiplier;
-        //render = GetComponent<SpriteRenderer>();
-        Debug.Log("Hello");
 
+       
+        //render = GetComponent<SpriteRenderer>();
+        TestText.singleton.ShowHealth(health);
 
         Attack();
 
@@ -48,28 +57,41 @@ public class FirstEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(health,this);
+        if ( enemySO != null)
+        {
+            enemySO.firstHealth = health;
+            enemySO.firstMana = mana;
+        }
 
+        Debug.Log("Update Health: " + health, this);
     }
 
     public void LoseHealth(float loss)
     {
-        
-        health -= loss * defaultMultiplier;
-
-         if (health <= 0)
+        Debug.Log("Health Before: "+ this.health, this);
+        float damage = loss;
+        Debug.Log("Damage " + loss);
+        float healthResult = damage;
+        //estText.singleton.ShowHealth(healthResult);
+        Debug.Log("Health: "+ health, this);
+         if (healthResult <= 0)
         {
+            this.health = 0;
             Debug.Log("Dead", this);
             //this.enabled=false;
+        }
+        else
+        {
+            this.health = health;
         }
         
     }
 
     public void TempChangeMultiplier(float multiplier, float time)
     {
-        
+       
         defaultMultiplier = multiplier;
-        
+         
         float timer = 0;
         while(timer < time)
         {
@@ -77,6 +99,7 @@ public class FirstEnemy : MonoBehaviour
             //Debug.Log(""+defaultMultiplier + " Time: " + timer);
         }
         defaultMultiplier= healthLossMultiplier;
+        Debug.Log("Multiplier: " + defaultMultiplier);
     }
 
     public void ReduceMana(float cost)
@@ -96,6 +119,8 @@ public class FirstEnemy : MonoBehaviour
     public void RecoverMana(float recover){
 
             while(mana < maxMana){
+                if (health <= 0)
+                    break;
                 GainMana(recover);
             }
 
@@ -106,28 +131,32 @@ public class FirstEnemy : MonoBehaviour
         this.mana += gain;
         if (mana >= maxMana)
             { this.mana = maxMana; }
-        Debug.Log("Recovered Mana:  " + mana);
+        //Debug.Log("Recovered Mana:  " + mana);
         //Debug.Log("Player " + mana);
 
     }
 
     void Attack()
     {
-        Debug.Log("I'm Working");
+        
+
+        //Debug.Log("I'm Working");
         StartCoroutine(AttackRoutine());
         IEnumerator AttackRoutine()
         {
             
             while(true){
-                Debug.Log("Mana: " + mana, this);
-                // if (health <= 0)
-                //     break;
+                Debug.Log("Health Attack: "+health,this);
+                //Debug.Log("Mana: " + mana, this);
+                if (health <= 0)
+                    {break;}
                     //Debug.Log("Dead",this);}
                     //Debug.Log("Hit Mana: " + mana, this);
                 if(mana > 0)
                 {
-                    
-                    Debug.Log("Hit Mana: " + mana, this);
+                    if (health <= 0)
+                        {break;}
+                    //Debug.Log("Hit Mana: " + mana, this);
                     shooter.ShootSpells(spell, player.transform.position, 1);              
                     //GainMana(recover);
                     yield return new WaitForSeconds(3f);
@@ -137,9 +166,11 @@ public class FirstEnemy : MonoBehaviour
 
                 if(mana == 0)
                 {
+                    if (health <= 0)
+                        {break;}
                     //Debug.Log("Hit Mana", this);
                     RecoverMana(manaRecovery);
-                    Debug.Log("Hit Coroutine: " + mana, this);
+                    //Debug.Log("Hit Coroutine: " + mana, this);
                     yield return new WaitForSeconds(5f);
                 }
 
