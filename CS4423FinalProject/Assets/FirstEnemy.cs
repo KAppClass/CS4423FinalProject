@@ -24,7 +24,7 @@ public class FirstEnemy : MonoBehaviour
 
 
     private float defaultMultiplier;
-    Renderer render;
+    //Renderer render;
 
     
     //[SerializeField]
@@ -37,11 +37,12 @@ public class FirstEnemy : MonoBehaviour
             mana = maxMana;
 
         defaultMultiplier = healthLossMultiplier;
-        render = GetComponent<SpriteRenderer>();
+        //render = GetComponent<SpriteRenderer>();
+        Debug.Log("Hello");
 
-        Attack(manaRecovery);
 
-        test.ShowHealth(health);
+        Attack();
+
     }
 
     // Update is called once per frame
@@ -110,7 +111,7 @@ public class FirstEnemy : MonoBehaviour
 
     }
 
-    void Attack(float recover)
+    void Attack()
     {
         Debug.Log("I'm Working");
         StartCoroutine(AttackRoutine());
