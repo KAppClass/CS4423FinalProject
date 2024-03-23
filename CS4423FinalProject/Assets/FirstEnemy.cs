@@ -20,39 +20,48 @@ public class FirstEnemy : MonoBehaviour
 
     [SerializeField] ShootSpell shooter;
     [SerializeField] Player player;
+    [SerializeField] TestText test;
 
 
     private float defaultMultiplier;
+    Renderer render;
+
     
     //[SerializeField]
     // Start is called before the first frame update
     void Start()
     {
+        
+
+        if(mana != maxMana)
+            mana = maxMana;
 
         defaultMultiplier = healthLossMultiplier;
+        render = GetComponent<SpriteRenderer>();
 
         Attack(manaRecovery);
 
-
+        test.ShowHealth(health);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(health,this);
 
     }
 
     public void LoseHealth(float loss)
     {
-        Debug.Log(health, this);
+        
         health -= loss * defaultMultiplier;
 
          if (health <= 0)
         {
-            Destroy(this);
+            Debug.Log("Dead", this);
+            //this.enabled=false;
         }
-
+        
     }
 
     public void TempChangeMultiplier(float multiplier, float time)
@@ -103,25 +112,25 @@ public class FirstEnemy : MonoBehaviour
 
     void Attack(float recover)
     {
+        Debug.Log("I'm Working");
         StartCoroutine(AttackRoutine());
         IEnumerator AttackRoutine()
         {
+            
             while(true){
                 Debug.Log("Mana: " + mana, this);
-                if (health <= 0)
-                    {break;
-                    Debug.Log("Dead",this);}
+                // if (health <= 0)
+                //     break;
+                    //Debug.Log("Dead",this);}
                     //Debug.Log("Hit Mana: " + mana, this);
                 if(mana > 0)
                 {
-                    if (health <= 0)
-                    break;
-                    //Debug.Log("Hit Mana: " + mana, this);
+                    
+                    Debug.Log("Hit Mana: " + mana, this);
                     shooter.ShootSpells(spell, player.transform.position, 1);              
                     //GainMana(recover);
                     yield return new WaitForSeconds(3f);
-                    if (health <= 0)
-                    break;
+                    
                     //Debug.Log("Hit Mana: " + mana, this);
                 }
 
