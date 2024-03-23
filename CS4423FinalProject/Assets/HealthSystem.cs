@@ -7,6 +7,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] PlayerSO playerSO;
     [SerializeField] FirstEnemy first;
+    [SerializeField] EnemySO enemySO;
     //[SerializeField] Enemy enemy;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class HealthSystem : MonoBehaviour
     public void FirstEnemyNegativeHealth(float loss, float multiplier, float time)
     {
         //Debug.Log("This",this);
-        first.TempChangeMultiplier(multiplier, time);
+        //first.TempChangeMultiplier(multiplier, time);
         first.LoseHealth(loss);
         
     }

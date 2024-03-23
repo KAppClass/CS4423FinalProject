@@ -7,8 +7,8 @@ public class FirstEnemy : MonoBehaviour
     [Header("Stats")]
 
     [SerializeField] float maxMana;
-    private float health;
-    [SerializeField] private float mana;
+    float curHealth;
+    float mana;
     [SerializeField] float speed;
     [SerializeField] int spell;
     [SerializeField] float jump = 15f;
@@ -35,14 +35,14 @@ public class FirstEnemy : MonoBehaviour
         {
              if(this.tag == "Enemy1")
             {
-                this.health = enemySO.firstHealth;
+                this.curHealth = enemySO.firstHealth;
                 this.mana = enemySO.firstMana;
                 this.maxMana = enemySO.firstMaxMana;
             }  
         
         }
 
-        Debug.Log("Starting Health " + health);
+        Debug.Log("Starting Mana " + mana);
 
         defaultMultiplier = healthLossMultiplier;
 
@@ -59,34 +59,30 @@ public class FirstEnemy : MonoBehaviour
     {
         if ( enemySO != null)
         {
-            enemySO.firstHealth = health;
+            enemySO.firstHealth = curHealth;
             enemySO.firstMana = mana;
         }
 
-        Debug.Log("Update Health: " + health, this);
+        //Debug.Log("Update Health: " + health, this);
         //TestText.singleton.ShowHealth(health);
     }
 
 
     public void LoseHealth(float loss)
     {
-        Debug.Log("Health Before: "+ this.health, this);
-        float damage = health - loss;
+        Debug.Log("Health Before: "+ this.curHealth, this);
+        
         Debug.Log("Damage " + loss);
-        float healthResult = damage;
+        this.curHealth -= loss;
         //TestText.singleton.ShowHealth(healthResult);
-        Debug.Log("Health: "+ health, this);
-         if (healthResult <= 0)
+        Debug.Log("Health After: "+ curHealth, this);
+         if (this.curHealth <= 0)
         {
-            this.health = 0;
+            this.curHealth = 0;
             Debug.Log("Dead", this);
             //this.enabled=false;
         }
-        else
-        {
-            this.health = healthResult;
-            TestText.singleton.ShowHealth(this.health);
-        }
+
         
     }
 
@@ -102,34 +98,34 @@ public class FirstEnemy : MonoBehaviour
             //Debug.Log(""+defaultMultiplier + " Time: " + timer);
         }
         defaultMultiplier= healthLossMultiplier;
-        Debug.Log("Multiplier: " + defaultMultiplier);
+        //Debug.Log("Multiplier: " + defaultMultiplier);
     }
 
     public void ReduceMana(float cost)
     {
         // Debug.Log("ReduceMana cost: " + cost, this);
-        // Debug.Log("ReduceMana mana before: " + mana, this);
+        //Debug.Log("ReduceMana mana before: " + this.mana, this);
 
-        this.mana -= cost;
+        SetReducedMana(cost);
 
         if (mana <= 0)
             { this.mana = 0; }
-        //Debug.Log("ReduceMana mana after: " + cost, this);
+        //Debug.Log("ReduceMana mana after: " + this.mana, this);
 
 
     }
 
-    public void RecoverMana(float recover){
+    void RecoverMana(float recover){
 
             while(mana < maxMana){
-                if (health <= 0)
+                if (curHealth <= 0)
                     break;
                 GainMana(recover);
             }
 
     }
 
-    public void GainMana(float gain)
+    void GainMana(float gain)
     {
         this.mana += gain;
         if (mana >= maxMana)
@@ -149,15 +145,15 @@ public class FirstEnemy : MonoBehaviour
         {
             
             while(true){
-                Debug.Log("Health Attack: "+health,this);
+                //Debug.Log("Health Attack: "+health,this);
                 //Debug.Log("Mana: " + mana, this);
-                if (health <= 0)
+                if (curHealth <= 0)
                     {break;}
                     //Debug.Log("Dead",this);}
                     //Debug.Log("Hit Mana: " + mana, this);
                 if(mana > 0)
                 {
-                    if (health <= 0)
+                    if (curHealth <= 0)
                         {break;}
                     //Debug.Log("Hit Mana: " + mana, this);
                     shooter.ShootSpells(spell, player.transform.position, 1);              
@@ -169,7 +165,7 @@ public class FirstEnemy : MonoBehaviour
 
                 if(mana == 0)
                 {
-                    if (health <= 0)
+                    if (curHealth <= 0)
                         {break;}
                     //Debug.Log("Hit Mana", this);
                     RecoverMana(manaRecovery);
@@ -186,8 +182,7 @@ public class FirstEnemy : MonoBehaviour
  
     }
 
-    public float GetHealth() {return health;}
-    public float GetMana() {
-        
-        return mana;}
+    public float GetHealth() {return curHealth;}
+    public float GetMana() {return mana;}
+    void SetReducedMana(float mana) {this.mana -= mana;}
 }

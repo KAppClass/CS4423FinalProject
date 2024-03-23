@@ -1062,6 +1062,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &970385475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1041845649056050772, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
+  m_PrefabInstance: {fileID: 7334523454122744646}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf9ccccdec35b14eab4b7f32873b271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1095724371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,9 +1731,17 @@ PrefabInstance:
       value: HealthSystem
       objectReference: {fileID: 0}
     - target: {fileID: 5459673567473337959, guid: 5284cdb82a4a07f4c9d267ed33b696e6, type: 3}
+      propertyPath: first
+      value: 
+      objectReference: {fileID: 970385475}
+    - target: {fileID: 5459673567473337959, guid: 5284cdb82a4a07f4c9d267ed33b696e6, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 850504223}
+    - target: {fileID: 5459673567473337959, guid: 5284cdb82a4a07f4c9d267ed33b696e6, type: 3}
+      propertyPath: enemySO
+      value: 
+      objectReference: {fileID: 11400000, guid: ec3db1793e863ab4985fdcf11b24ee6b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1809,6 +1828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManaManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3891918268968969596, guid: 043f497aeae6a544ea8f0f94ce17d827, type: 3}
+      propertyPath: first
+      value: 
+      objectReference: {fileID: 970385475}
     - target: {fileID: 3891918268968969596, guid: 043f497aeae6a544ea8f0f94ce17d827, type: 3}
       propertyPath: player
       value: 
