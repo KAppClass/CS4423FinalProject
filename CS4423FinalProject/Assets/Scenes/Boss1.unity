@@ -200,10 +200,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1495447908045654854, guid: 36513496e1778934aa53d3b529e4711b, type: 3}
-      propertyPath: first
-      value: 
-      objectReference: {fileID: 2050777011}
-    - target: {fileID: 1495447908045654854, guid: 36513496e1778934aa53d3b529e4711b, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 850504223}
@@ -269,17 +265,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
-      propertyPath: first
-      value: 
-      objectReference: {fileID: 2050777011}
-    - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: manaManager
       value: 
       objectReference: {fileID: 1896130244}
-    - target: {fileID: 5243693140816388535, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
-      propertyPath: m_FlipY
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6299388907428627851, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: movement
       value: 
@@ -1679,17 +1667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771f27cc983af2d4d97f006c5f289e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2050777011 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1041845649056050772, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
-  m_PrefabInstance: {fileID: 7334523454122744646}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf9ccccdec35b14eab4b7f32873b271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2060232306439583086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1742,10 +1719,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthSystem
       objectReference: {fileID: 0}
-    - target: {fileID: 5459673567473337959, guid: 5284cdb82a4a07f4c9d267ed33b696e6, type: 3}
-      propertyPath: first
-      value: 
-      objectReference: {fileID: 2050777011}
     - target: {fileID: 5459673567473337959, guid: 5284cdb82a4a07f4c9d267ed33b696e6, type: 3}
       propertyPath: player
       value: 
@@ -1836,10 +1809,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManaManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3891918268968969596, guid: 043f497aeae6a544ea8f0f94ce17d827, type: 3}
-      propertyPath: first
-      value: 
-      objectReference: {fileID: 2050777011}
     - target: {fileID: 3891918268968969596, guid: 043f497aeae6a544ea8f0f94ce17d827, type: 3}
       propertyPath: player
       value: 

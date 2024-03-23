@@ -7,7 +7,7 @@ public class FirstEnemy : MonoBehaviour
     [Header("Stats")]
 
     [SerializeField] float maxMana;
-    private float health = 10f;
+    private float health;
     [SerializeField] private float mana;
     [SerializeField] float speed;
     [SerializeField] int spell;
@@ -48,7 +48,7 @@ public class FirstEnemy : MonoBehaviour
 
        
         //render = GetComponent<SpriteRenderer>();
-        TestText.singleton.ShowHealth(health);
+        
 
         Attack();
 
@@ -64,15 +64,17 @@ public class FirstEnemy : MonoBehaviour
         }
 
         Debug.Log("Update Health: " + health, this);
+        //TestText.singleton.ShowHealth(health);
     }
+
 
     public void LoseHealth(float loss)
     {
         Debug.Log("Health Before: "+ this.health, this);
-        float damage = loss;
+        float damage = health - loss;
         Debug.Log("Damage " + loss);
         float healthResult = damage;
-        //estText.singleton.ShowHealth(healthResult);
+        //TestText.singleton.ShowHealth(healthResult);
         Debug.Log("Health: "+ health, this);
          if (healthResult <= 0)
         {
@@ -82,7 +84,8 @@ public class FirstEnemy : MonoBehaviour
         }
         else
         {
-            this.health = health;
+            this.health = healthResult;
+            TestText.singleton.ShowHealth(this.health);
         }
         
     }

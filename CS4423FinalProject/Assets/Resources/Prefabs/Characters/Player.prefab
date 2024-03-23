@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -236,7 +236,7 @@ MonoBehaviour:
   manaManager: {fileID: 0}
   playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
   player: {fileID: 5504486188786155122}
-  first: {fileID: 0}
+  first: {fileID: 1041845649056050772, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
 --- !u!1 &7601642731534156779
 GameObject:
   m_ObjectHideFlags: 0
