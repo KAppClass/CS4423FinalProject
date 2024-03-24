@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy SO
   m_EditorClassIdentifier: 
   firstHealth: 10
-  firstMana: 4
+  firstMana: 10
   firstMaxMana: 20

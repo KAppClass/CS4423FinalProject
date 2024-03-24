@@ -29,23 +29,28 @@ public class FireBall : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D obj)
     {
+        
         if (obj.gameObject.tag == "Enviroment")
         {
             Destroy(this.gameObject);
         }
-        if ((obj.gameObject.tag == "Enemy1"))
+        if (obj.gameObject.tag == "Enemy1")
         {
             //Debug.Log("This",this);
             
-            if(healthSystem == null)
-                Debug.Log("Health is Null");
+            
+            // if(healthSystem == null)
+            //     Debug.Log("Health is Null");
             healthSystem.FirstEnemyNegativeHealth(damage, damageMultiplier, multiplierTime);
             Destroy(this.gameObject);
         }
-        if ((obj.gameObject.tag == "Player"))
+        if (obj.gameObject.tag == "Player")
         {
-
+            // Debug.Log("Trigger Working", this);
+            healthSystem.PlayerLoseHealth(damage);
+            Destroy(this.gameObject);
         }
+
     }
 
     public float GetDamage() {return damage;}

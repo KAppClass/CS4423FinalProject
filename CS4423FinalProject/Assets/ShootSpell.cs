@@ -27,11 +27,11 @@ public class ShootSpell : MonoBehaviour
         switch (spell)
         {
             case 0:
-                     Debug.Log("Shooter User1: " + playerSO.mana,this);
+                     //Debug.Log("Shooter User1: " + playerSO.mana,this);
 
                     if (playerSO.mana >= fireBall.GetCost())
                     {
-                        Debug.Log("Shooter User2: " + playerSO.mana,this);
+                        //Debug.Log("Shooter User2: " + playerSO.mana,this);
                         ShootFireBall(aim);
                         manaManager.ReduceMana(fireBall.GetCost(), type);
                     }

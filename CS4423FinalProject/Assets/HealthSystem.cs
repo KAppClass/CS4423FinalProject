@@ -26,8 +26,8 @@ public class HealthSystem : MonoBehaviour
     {
         //Debug.Log("This",this);
         //first.TempChangeMultiplier(multiplier, time);
-        if (first == null)
-            Debug.Log("First NuLL");
+        // if (first == null)
+        //     Debug.Log("First NuLL");
         first.LoseHealth(loss);
         
     }
