@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5504486188786155122}
   - component: {fileID: 3935052981529106978}
   - component: {fileID: 5506445512635578676}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -198,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3556002388858523729}
   - component: {fileID: 4785834764139321709}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PlayerSpellShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,8 +214,8 @@ Transform:
   m_GameObject: {fileID: 4124849337976180997}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.33, y: 0.09, z: 0.05017933}
-  m_LocalScale: {x: 2.3612, y: 2.3612, z: 2.3612}
+  m_LocalPosition: {x: 0.64, y: 0.42, z: 0.05017933}
+  m_LocalScale: {x: 0.16115162, y: 0.16115162, z: 0.16115162}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6854850868754133128}

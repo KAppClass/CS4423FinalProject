@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] FirstEnemy enemy;
+    [SerializeField] Enemy enemy;
     // Start is called before the first frame update
     void Start()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ManaManager : MonoBehaviour
 {
     [SerializeField] Player player;
-    [SerializeField] FirstEnemy first;
+    [SerializeField] Enemy first;
     //[SerializeField] PlayerSO playerSO;
 
     // Start is called before the first frame update

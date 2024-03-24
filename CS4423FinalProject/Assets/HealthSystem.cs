@@ -6,7 +6,7 @@ public class HealthSystem : MonoBehaviour
 {
     [SerializeField] Player player;
     [SerializeField] PlayerSO playerSO;
-    [SerializeField] FirstEnemy first;
+    [SerializeField] Enemy first;
     [SerializeField] EnemySO enemySO;
     //[SerializeField] Enemy enemy;
     // Start is called before the first frame update

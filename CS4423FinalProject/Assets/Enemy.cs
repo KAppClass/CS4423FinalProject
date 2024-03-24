@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirstEnemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [Header("Stats")]
 
     [SerializeField] float maxMana;
-    [SerializeField] float health;
+    
     [SerializeField] float mana;
     [SerializeField] float speed;
     [SerializeField] int spell;
@@ -20,6 +20,9 @@ public class FirstEnemy : MonoBehaviour
     [SerializeField] EnemySO enemySO;
     [SerializeField] EnemyShooter shooter;
     [SerializeField] Player player;
+
+
+    float health;
 
 
     private float defaultMultiplier;
@@ -49,7 +52,7 @@ public class FirstEnemy : MonoBehaviour
 
         defaultMultiplier = healthLossMultiplier;
 
-       
+        Debug.Log("Update Enemy Health: " + this.health, gameObject);
         //render = GetComponent<SpriteRenderer>();
         
 
@@ -66,32 +69,32 @@ public class FirstEnemy : MonoBehaviour
             enemySO.firstMana = mana;
         }
 
-        Debug.Log("Update Health: " + this.health, this);
+        // Debug.Log("Update Enemy Health: " + this.health, gameObject);
+        // Debug.Log("Update EnemySO Health: " + enemySO.firstHealth, gameObject);
         //TestText.singleton.ShowHealth(health);
     }
 
 
     public void LoseHealth(float loss)
     {
-        
-        Debug.Log("Current Health In Lose " + this.health);
-        float afterHealth = enemySO.firstMana - loss;
-        Debug.Log("afterHealth " + afterHealth);
-    if (afterHealth <= 0)
+        Debug.Log("Current Health In Lose " + this.health, gameObject);
+        // float afterHealth = this.health - loss;
+        // Debug.Log("afterHealth " + afterHealth);
+    if (health <= 0)
         {
             Die();
         }
-        else
-        {
-            this.health = afterHealth;
-        }
+        // else
+        // {
+        //     this.health = afterHealth;
+        // }
         //Debug.Log("Current Health After Lose" + health);
     }
 
     void Die()
     {
         this.health = 0;
-        Debug.Log("Dead", this);
+        Debug.Log("Dead", gameObject);
         //Debug.Log("Should Stop");
         //this.gameObject.SetActiveRecursively(false);
         this.gameObject.active = false;
@@ -198,6 +201,5 @@ public class FirstEnemy : MonoBehaviour
     public float GetHealth() {return health;}
     public float GetMana() {return mana;}
     void SetReducedMana(float mana) {this.mana -= mana;}
-    void SetReducedHealth(float health) {
-}
+    void SetReducedHealth(float health) {this.health -= health;}
 }
