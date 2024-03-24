@@ -7,13 +7,13 @@ public class Enemy : MonoBehaviour
     [Header("Stats")]
 
     [SerializeField] float maxMana;
-    
     [SerializeField] float mana;
     [SerializeField] float speed;
     [SerializeField] int spell;
-    [SerializeField] float jump = 15f;
+    [SerializeField] float jump;
     [SerializeField] float healthLossMultiplier;
     [SerializeField] float manaRecovery;
+    [SerializeField] float waitTime;
 
     [Header("Necessary Systems")]
 
@@ -86,14 +86,14 @@ public class Enemy : MonoBehaviour
        
         defaultMultiplier = multiplier;
          
-        float timer = 0;
-        while(timer < time)
-        {
-            timer+=Time.deltaTime;
-            //Debug.Log(""+defaultMultiplier + " Time: " + timer);
-        }
-        defaultMultiplier= healthLossMultiplier;
-        //Debug.Log("Multiplier: " + defaultMultiplier);
+        // float timer = 0;
+        // while(timer < time)
+        // {
+        //     timer+=Time.deltaTime;
+        //     //Debug.Log(""+defaultMultiplier + " Time: " + timer);
+        // }
+        // defaultMultiplier= healthLossMultiplier;
+        // //Debug.Log("Multiplier: " + defaultMultiplier);
     }
 
     public void ReduceMana(float cost)

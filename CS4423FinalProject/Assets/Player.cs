@@ -63,7 +63,6 @@ public class Player : MonoBehaviour
             playerSO.mana = mana;
             playerSO.speed = speed;
             playerSO.jump = jump;
-            playerSO.healthLossMultiplier = healthLossMultiplier;
         }
 
         //Debug.Log("Player Health: " + health);
@@ -84,13 +83,13 @@ public class Player : MonoBehaviour
         
         defaultMultiplier = multiplier;
         
-        float timer = 0;
-        while(timer < time)
-        {
-            timer+=Time.deltaTime;
-            //Debug.Log(""+defaultMultiplier + " Time: " + timer);
-        }
-        defaultMultiplier = healthLossMultiplier;
+        // float timer = 0;
+        // while(timer < time)
+        // {
+        //     timer+=Time.deltaTime;
+        //     //Debug.Log(""+defaultMultiplier + " Time: " + timer);
+        // }
+        // defaultMultiplier = healthLossMultiplier;
     }
 
     public void GainHealth(float gain)
