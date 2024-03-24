@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   maxMana: 10
-  health: 5
-  mana: 0.5
+  health: 4
+  mana: 10
   speed: 7
   spell: 0
   jump: 15

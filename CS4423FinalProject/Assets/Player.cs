@@ -66,14 +66,16 @@ public class Player : MonoBehaviour
             playerSO.healthLossMultiplier = healthLossMultiplier;
         }
 
-        Debug.Log("Player Health: " + health);
+        //Debug.Log("Player Health: " + health);
+        TestText.singleton.ShowHealth(health);
     }
 
     public void LoseHealth(float loss)
     {
-        this.health -= loss * healthLossMultiplier;
+        this.health -= loss * defaultMultiplier;
         if (this.health <= 0)
-            { this.health = 0; }
+            { this.health = 0; 
+            Debug.Log("Player Died");}
         
     }
 

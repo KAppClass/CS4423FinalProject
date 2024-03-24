@@ -47,7 +47,7 @@ public class FireBall : MonoBehaviour
         if (obj.gameObject.tag == "Player")
         {
             // Debug.Log("Trigger Working", this);
-            healthSystem.PlayerLoseHealth(damage);
+            healthSystem.PlayerLoseHealth(damage, damageMultiplier, multiplierTime);
             Destroy(this.gameObject);
         }
 

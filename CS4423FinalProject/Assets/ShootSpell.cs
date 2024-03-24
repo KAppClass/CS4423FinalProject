@@ -50,7 +50,7 @@ public class ShootSpell : MonoBehaviour
         FireBall spell = Instantiate(fireBall, transform.position, Quaternion.identity);
         spell.transform.rotation = Quaternion.LookRotation(transform.forward, aim - transform.position);
         spell.GetComponent<Rigidbody2D>().velocity = spell.transform.up * fireBall.GetSpeed();
-        Destroy(spell,10);
+        //Destroy(spell,10);
     }
 
 }

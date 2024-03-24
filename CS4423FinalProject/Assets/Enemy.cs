@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
 
         defaultMultiplier = healthLossMultiplier;
 
-        Debug.Log("Update Enemy Health: " + this.health, gameObject);
+        Debug.Log("Update Enemy Health: " + this.health + " " + this.name, this);
         //render = GetComponent<SpriteRenderer>();
         
 
@@ -69,38 +69,18 @@ public class Enemy : MonoBehaviour
             enemySO.firstMana = mana;
         }
 
-        // Debug.Log("Update Enemy Health: " + this.health, gameObject);
-        // Debug.Log("Update EnemySO Health: " + enemySO.firstHealth, gameObject);
         //TestText.singleton.ShowHealth(health);
     }
 
 
     public void LoseHealth(float loss)
     {
-        Debug.Log("Current Health In Lose " + this.health, gameObject);
-        // float afterHealth = this.health - loss;
-        // Debug.Log("afterHealth " + afterHealth);
-    if (health <= 0)
-        {
-            Die();
-        }
-        // else
-        // {
-        //     this.health = afterHealth;
-        // }
-        //Debug.Log("Current Health After Lose" + health);
+        this.health -= loss * defaultMultiplier;
+        if (this.health <= 0)
+            { this.health = 0; }
     }
 
-    void Die()
-    {
-        this.health = 0;
-        Debug.Log("Dead", gameObject);
-        //Debug.Log("Should Stop");
-        //this.gameObject.SetActiveRecursively(false);
-        this.gameObject.active = false;
-        //this.enabled=false;
-    }
-
+ 
     public void TempChangeMultiplier(float multiplier, float time)
     {
        
