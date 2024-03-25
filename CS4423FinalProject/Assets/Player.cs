@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         }
 
         //Debug.Log("Player Health: " + health);
-        TestText.singleton.ShowHealth(health);
+        //TestText.singleton.ShowHealth(health);
     }
 
     public void LoseHealth(float loss)
@@ -97,10 +97,6 @@ public class Player : MonoBehaviour
         health += gain;
         if (health >= maxHealth)
             { this.health = maxHealth; }
-        else
-        {
-            Debug.Log("Die Player!");
-        }
     }
 
     public void ReduceMana(float cost)

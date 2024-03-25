@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBall : MonoBehaviour
+public class DemonFireBall : MonoBehaviour
 {
 
     [Header("Stats")]
@@ -34,22 +34,22 @@ public class FireBall : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        if (obj.gameObject.tag == "Enemy1")
-        {
-            //Debug.Log("This",this);
-            
-            
-            // if(healthSystem == null)
-            //     Debug.Log("Health is Null");
-            healthSystem.FirstEnemyNegativeHealth(damage, damageMultiplier, multiplierTime);
-            Destroy(this.gameObject);
-        }
-        // if (obj.gameObject.tag == "Player")
+        // if (obj.gameObject.tag == "Enemy1")
         // {
-        //     // Debug.Log("Trigger Working", this);
-        //     healthSystem.PlayerLoseHealth(damage, damageMultiplier, multiplierTime);
+        //     //Debug.Log("This",this);
+            
+            
+        //     // if(healthSystem == null)
+        //     //     Debug.Log("Health is Null");
+        //     healthSystem.FirstEnemyNegativeHealth(damage, damageMultiplier, multiplierTime);
         //     Destroy(this.gameObject);
         // }
+        if (obj.gameObject.tag == "Player")
+        {
+            // Debug.Log("Trigger Working", this);
+            healthSystem.PlayerLoseHealth(damage, damageMultiplier, multiplierTime);
+            Destroy(this.gameObject);
+        }
 
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyShooter : MonoBehaviour
 {
     [Header("Spells")]
-    [SerializeField] FireBall fireBall;
+    [SerializeField] DemonFireBall fireBall;
 
     [Header("Needed Systems")]
     [SerializeField] ManaManager manaManager;
@@ -48,7 +48,7 @@ public class EnemyShooter : MonoBehaviour
 
     void ShootFireBall(Vector3 aim)
     {
-        FireBall spell = Instantiate(fireBall, transform.position, Quaternion.identity);
+        DemonFireBall spell = Instantiate(fireBall, transform.position, Quaternion.identity);
         spell.transform.rotation = Quaternion.LookRotation(transform.forward, aim - transform.position);
         spell.GetComponent<Rigidbody2D>().velocity = spell.transform.up * fireBall.GetSpeed();
         //Destroy(spell,10);
