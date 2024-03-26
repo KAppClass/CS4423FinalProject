@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
             {
                 Debug.Log("Hit",this);
                 this.health = enemySO.firstOriginalHealth;
-                this.mana = enemySO.firstMana;
+                this.mana = enemySO.firstMaxMana;
                 this.maxMana = enemySO.firstMaxMana;
             }  
 

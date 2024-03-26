@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203d187336b9ea445b37ed9f22d403bd, type: 3}
   m_Name: Player SO
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  originalMaxHealth: 10
+  originalMaxMana: 10
+  maxHealth: 10
   maxMana: 10
-  health: 8
+  sheild: 0
+  health: 0
   mana: 10
   speed: 7
-  spell: 0
+  shootSpell: 0
+  meleeSpell: 0
+  passiveSpell: 0
   jump: 15
   healthLossMultiplier: 1
   manaRecovery: 0.5

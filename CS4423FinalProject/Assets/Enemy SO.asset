@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstOriginalHealth: 20
   firstHealth: 20
-  firstMana: 10
+  firstMana: 8
   firstMaxMana: 20
