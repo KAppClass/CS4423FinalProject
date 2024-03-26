@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] EnemySO enemySO;
     [SerializeField] EnemyShooter shooter;
     [SerializeField] Player player;
+    [SerializeField] DoorManager door;
 
 
     float health;
@@ -39,7 +40,7 @@ public class Enemy : MonoBehaviour
              if(this.tag == "Enemy1")
             {
                 Debug.Log("Hit",this);
-                this.health = enemySO.firstHealth;
+                this.health = enemySO.firstOriginalHealth;
                 this.mana = enemySO.firstMana;
                 this.maxMana = enemySO.firstMaxMana;
             }  
@@ -52,11 +53,11 @@ public class Enemy : MonoBehaviour
 
         defaultMultiplier = healthLossMultiplier;
 
-        Debug.Log("Update Enemy Health: " + this.health + " " + this.name, this);
+        //Debug.Log("Update Enemy Health: " + this.health + " " + this.name, this);
         //render = GetComponent<SpriteRenderer>();
         
 
-        Attack();
+        //Attack();
 
     }
 
@@ -77,7 +78,9 @@ public class Enemy : MonoBehaviour
     {
         this.health -= loss * defaultMultiplier;
         if (this.health <= 0)
-            { this.health = 0; }
+            { this.health = 0; 
+            door.OpenExit();
+            gameObject.active = false;}
     }
 
  
@@ -129,7 +132,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void Attack()
+    public void Attack()
     {
         //Debug.Log("Current Health " + health);
 

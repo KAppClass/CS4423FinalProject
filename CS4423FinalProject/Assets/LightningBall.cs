@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceBall : MonoBehaviour
+public class LightingBall : MonoBehaviour
 {
 
     [Header("Stats")]

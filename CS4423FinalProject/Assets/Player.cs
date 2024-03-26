@@ -9,12 +9,15 @@ public class Player : MonoBehaviour
 
     [Header("Stats")]
 
-    [SerializeField] float maxHealth = 10;
+    [SerializeField] float maxHealth;
     [SerializeField] float maxMana;
+    [SerializeField] float sheild;
     [SerializeField] float health;
     [SerializeField] float mana;
     [SerializeField] float speed;
-    [SerializeField] int spell;
+    [SerializeField] int shootSpell;
+    //[SerializeField] int meleeSpell;
+    [SerializeField] int passiveSpell;
     [SerializeField] float jump = 15f;
     [SerializeField] float healthLossMultiplier = 1f;
     [SerializeField] float manaRecovery;
@@ -37,12 +40,15 @@ public class Player : MonoBehaviour
         {
             maxHealth = playerSO.maxHealth;
             maxMana = playerSO.maxMana;
+            sheild = playerSO.sheild;
             health = playerSO.health;
             mana = playerSO.mana;
             speed = playerSO.speed;
             jump = playerSO.jump;
             healthLossMultiplier = playerSO.healthLossMultiplier;
-            spell = playerSO.spell;
+            shootSpell = playerSO.shootSpell;
+            //meleeSpell = playerSO.meleeSpell;
+            passiveSpell = playerSO.passiveSpell;
             manaRecovery = playerSO.manaRecovery;
         }
 
@@ -73,8 +79,7 @@ public class Player : MonoBehaviour
     {
         this.health -= loss * defaultMultiplier;
         if (this.health <= 0)
-            { this.health = 0; 
-            Debug.Log("Player Died");}
+            { this.health = 0;}
         
     }
 
@@ -83,13 +88,13 @@ public class Player : MonoBehaviour
         
         defaultMultiplier = multiplier;
         
-        // float timer = 0;
-        // while(timer < time)
-        // {
-        //     timer+=Time.deltaTime;
-        //     //Debug.Log(""+defaultMultiplier + " Time: " + timer);
-        // }
-        // defaultMultiplier = healthLossMultiplier;
+        float timer = 0;
+        while(timer < time)
+        {
+            timer+=Time.deltaTime;
+            //Debug.Log(""+defaultMultiplier + " Time: " + timer);
+        }
+        defaultMultiplier = healthLossMultiplier;
     }
 
     public void GainHealth(float gain)
@@ -144,7 +149,19 @@ public class Player : MonoBehaviour
         maxHealth = max;
     }
 
-    
+    public void AssignShootSpell(int spell)
+    {
+        shootSpell = spell;
+        playerSO.shootSpell = spell;
+        Debug.Log("Spell: " + shootSpell);
+    }
+
+    public void AssignPassiveSpell(int spell)
+    {
+        passiveSpell = spell;
+        playerSO.passiveSpell = spell;
+        Debug.Log("Spell: " + passiveSpell);
+    }
 
     public Rigidbody2D GetRigid() { return this.rigid; }
     public float GetSpeed() { return this.speed; }
