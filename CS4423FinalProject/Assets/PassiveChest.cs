@@ -9,7 +9,6 @@ public class PassiveChest : MonoBehaviour
     [SerializeField] InventorySO inventory;
     [SerializeField] int chosenSpell;
     //[SerializeField] List<int> spellList;
-    private int spell;
     private int index;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +28,7 @@ public class PassiveChest : MonoBehaviour
     {
         if(inventory.unopened && Input.GetKeyDown(KeyCode.E))
         {
-            player.AssignShootSpell(chosenSpell);
+            playerSO.passiveSpell = chosenSpell;
             //inventory.shootInventory.RemoveAt(index);
             inventory.unopened = false;
         }

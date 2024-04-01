@@ -10,7 +10,7 @@ public class PlayerSO : ScriptableObject
     public float originalMaxMana = 10f;
     public float maxHealth = 5f;
     public float maxMana = 10f;
-    public float sheild = 0f;
+    public float shield = 0f;
     public float health = 5f;
     public float mana = 10f;
     public float speed = 7f;

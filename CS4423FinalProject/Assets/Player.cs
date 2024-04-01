@@ -12,13 +12,12 @@ public class Player : MonoBehaviour
 
     [SerializeField] float maxHealth;
     [SerializeField] float maxMana;
-    [SerializeField] float sheild;
+    [SerializeField] float shield;
     [SerializeField] float health;
     [SerializeField] float mana;
     [SerializeField] float speed;
     [SerializeField] int shootSpell;
     //[SerializeField] int meleeSpell;
-    [SerializeField] int passiveSpell;
     [SerializeField] float jump = 15f;
     [SerializeField] float healthLossMultiplier = 1f;
     [SerializeField] float manaRecovery;
@@ -41,7 +40,7 @@ public class Player : MonoBehaviour
         {
             maxHealth = playerSO.maxHealth;
             maxMana = playerSO.maxMana;
-            sheild = playerSO.sheild;
+            shield = playerSO.shield;
             health = playerSO.health;
             mana = playerSO.mana;
             speed = playerSO.speed;
@@ -49,7 +48,6 @@ public class Player : MonoBehaviour
             healthLossMultiplier = playerSO.healthLossMultiplier;
             shootSpell = playerSO.shootSpell;
             //meleeSpell = playerSO.meleeSpell;
-            passiveSpell = playerSO.passiveSpell;
             manaRecovery = playerSO.manaRecovery;
         }
 
@@ -70,9 +68,9 @@ public class Player : MonoBehaviour
             playerSO.mana = mana;
             playerSO.speed = speed;
             playerSO.jump = jump;
+            playerSO.shield = shield;
         }
 
-        //Debug.Log("Player Health: " + health);
         //TestText.singleton.ShowHealth(health);
     }
 
@@ -90,13 +88,6 @@ public class Player : MonoBehaviour
         
         defaultMultiplier = multiplier;
         
-        float timer = 0;
-        while(timer < time)
-        {
-            timer+=Time.deltaTime;
-            //Debug.Log(""+defaultMultiplier + " Time: " + timer);
-        }
-        defaultMultiplier = healthLossMultiplier;
     }
 
     public void GainHealth(float gain)
@@ -149,6 +140,13 @@ public class Player : MonoBehaviour
     public void ChangeMaxHealth(float max)
     {
         maxHealth = max;
+        playerSO.maxHealth = max;
+    }
+
+    public void ChangeMaxMana(float max)
+    {
+        maxMana = max;
+        playerSO.maxMana = max;
     }
 
     public void AssignShootSpell(int spell)
@@ -158,11 +156,15 @@ public class Player : MonoBehaviour
         Debug.Log("Spell: " + shootSpell);
     }
 
-    public void AssignPassiveSpell(int spell)
+    public void ChangeShield(float shield)
     {
-        passiveSpell = spell;
-        playerSO.passiveSpell = spell;
-        Debug.Log("Spell: " + passiveSpell);
+        this.shield = shield;
+        Debug.Log("Player Shield: " + shield);
+    }
+
+    public void ReduceShield(float loss)
+    {
+        shield--;
     }
 
     public Rigidbody2D GetRigid() { return this.rigid; }
