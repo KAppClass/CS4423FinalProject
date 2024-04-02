@@ -2,28 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class FirstEnemy : MonoBehaviour
 {
     [Header("Stats")]
 
     [SerializeField] float maxMana;
+    [SerializeField] float health;
     [SerializeField] float mana;
     [SerializeField] float speed;
     [SerializeField] int spell;
-    [SerializeField] float jump;
+    [SerializeField] float jump = 15f;
     [SerializeField] float healthLossMultiplier;
     [SerializeField] float manaRecovery;
-    [SerializeField] float waitTime;
 
     [Header("Necessary Systems")]
 
     [SerializeField] EnemySO enemySO;
     [SerializeField] EnemyShooter shooter;
     [SerializeField] Player player;
-    [SerializeField] DoorManager door;
-
-
-    float health;
 
 
     private float defaultMultiplier;
@@ -40,8 +36,8 @@ public class Enemy : MonoBehaviour
              if(this.tag == "Enemy1")
             {
                 Debug.Log("Hit",this);
-                this.health = enemySO.firstOriginalHealth;
-                this.mana = enemySO.firstMaxMana;
+                this.health = enemySO.firstHealth;
+                this.mana = enemySO.firstMana;
                 this.maxMana = enemySO.firstMaxMana;
             }  
 
@@ -53,11 +49,11 @@ public class Enemy : MonoBehaviour
 
         defaultMultiplier = healthLossMultiplier;
 
-        //Debug.Log("Update Enemy Health: " + this.health + " " + this.name, this);
+       
         //render = GetComponent<SpriteRenderer>();
         
 
-        //Attack();
+        Attack();
 
     }
 
@@ -70,32 +66,44 @@ public class Enemy : MonoBehaviour
             enemySO.firstMana = mana;
         }
 
+        Debug.Log("Update Health: " + health, this);
+        //TestText.singleton.ShowHealth(health);
     }
 
 
     public void LoseHealth(float loss)
     {
-        this.health -= loss * defaultMultiplier;
-        if (this.health <= 0)
-            { this.health = 0; 
-            door.OpenExit();
-            gameObject.active = false;}
+        
+        Debug.Log("Current Health In Lose " + enemySO.firstHealth);
+        float afterHealth = enemySO.firstMana - loss;
+    if (afterHealth <= 0)
+        {
+            this.health = 0;
+            Debug.Log("Dead", this);
+            //Debug.Log("Should Stop");
+            this.gameObject.active = false;
+            //this.enabled=false;
+        }
+        else
+        {
+            this.health = afterHealth;
+        }
+        //Debug.Log("Current Health After Lose" + health);
     }
 
- 
     public void TempChangeMultiplier(float multiplier, float time)
     {
        
         defaultMultiplier = multiplier;
          
-        // float timer = 0;
-        // while(timer < time)
-        // {
-        //     timer+=Time.deltaTime;
-        //     //Debug.Log(""+defaultMultiplier + " Time: " + timer);
-        // }
-        // defaultMultiplier= healthLossMultiplier;
-        // //Debug.Log("Multiplier: " + defaultMultiplier);
+        float timer = 0;
+        while(timer < time)
+        {
+            timer+=Time.deltaTime;
+            //Debug.Log(""+defaultMultiplier + " Time: " + timer);
+        }
+        defaultMultiplier= healthLossMultiplier;
+        //Debug.Log("Multiplier: " + defaultMultiplier);
     }
 
     public void ReduceMana(float cost)
@@ -131,7 +139,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void Attack()
+    void Attack()
     {
         //Debug.Log("Current Health " + health);
 
@@ -154,6 +162,7 @@ public class Enemy : MonoBehaviour
                             break;}
                     //Debug.Log("Hit Mana: " + mana, this);
                     shooter.ShootSpells(spell, player.transform.position, 1);              
+                    //GainMana(recover);
                     yield return new WaitForSeconds(3f);
                     
                     //Debug.Log("Hit Mana: " + mana, this);
@@ -182,5 +191,6 @@ public class Enemy : MonoBehaviour
     public float GetHealth() {return health;}
     public float GetMana() {return mana;}
     void SetReducedMana(float mana) {this.mana -= mana;}
-    void SetReducedHealth(float health) {this.health -= health;}
+    void SetReducedHealth(float health) {
+}
 }

@@ -13,6 +13,11 @@ public class EnemyShooter : MonoBehaviour
 
     [Header("Enemy")]
     [SerializeField] EnemySO enemySO;
+
+    [SerializeField] LayerMask playerLayer;
+
+    bool playerSpotted = false;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -20,27 +25,42 @@ public class EnemyShooter : MonoBehaviour
         //transform.SetParent(creature.transform);
     }
 
+    void Update()
+    {
+        //ray = new Ray(transform.position, transform.);
+    }
+
     public void ShootSpells(int spell, Vector3 aim, int type)
     {
+        //Raycast2D ray = new Ray2D(transform.position, aim);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, aim-transform.position);
 
+        Vector3 directon = aim * 10;
+        //Debug.Log(ray.collider.name);
 
-        switch (spell)
+        if (ray.collider != null)
         {
-            case 0:
 
-                    //Debug.Log("Enemy Mana: " + enemySO.firstMana);
-                     
-                    if ( enemySO.firstMana >= fireBall.GetCost())
-                    {
+            playerSpotted = ray.collider.CompareTag("Player");
+
+            switch (spell)
+            {
+                case 0:
+
+                        //Debug.Log("Enemy Mana: " + enemySO.firstMana);
                         
-                        ShootFireBall(aim);
-                        manaManager.ReduceMana(fireBall.GetCost(), type);
-                    }
-            
-                break;
-            default:
-                Debug.Log("Man Reduction Not working");
-                break;
+                        if ( playerSpotted && (enemySO.firstMana >= fireBall.GetCost()))
+                        {
+                            
+                            ShootFireBall(aim);
+                            manaManager.ReduceMana(fireBall.GetCost(), type);
+                        }
+                
+                    break;
+                default:
+                    Debug.Log("Man Reduction Not working");
+                    break;
+            }
         }
         
     }

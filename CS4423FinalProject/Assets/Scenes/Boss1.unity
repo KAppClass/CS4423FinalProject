@@ -903,9 +903,9 @@ RectTransform:
   - {fileID: 134131351}
   m_Father: {fileID: 1355906067}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 19.199951, y: -26.599976}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 19.199951, y: 35}
   m_SizeDelta: {x: 161.12, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &393676960
@@ -1033,7 +1033,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 564213737915029670, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: m_Name
-      value: VisablePlayer
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 564213737915029670, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: iceBall
@@ -1915,9 +1919,9 @@ RectTransform:
   - {fileID: 919183787}
   m_Father: {fileID: 1355906067}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 19.199951, y: -70}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -272, y: 35}
   m_SizeDelta: {x: 161.12, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1317467349
@@ -3140,6 +3144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy1
       objectReference: {fileID: 0}
+    - target: {fileID: 2296808870615340555, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5084161845900860055, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: m_Color.b
       value: 0.047418986
@@ -3152,6 +3160,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.6792453
       objectReference: {fileID: 0}
+    - target: {fileID: 5793931498646618447, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6854443980943593454, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: fireBall
       value: 
@@ -3160,6 +3172,10 @@ PrefabInstance:
       propertyPath: manaManager
       value: 
       objectReference: {fileID: 1896130244}
+    - target: {fileID: 6854443980943593454, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 7447740807130455281, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: checkpoints.Array.data[0]
       value: 
