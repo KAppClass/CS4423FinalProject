@@ -103,12 +103,11 @@ MonoBehaviour:
   playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
   maxHealth: 10
   maxMana: 5
-  sheild: 0
+  shield: 0
   health: 0
   mana: 5
   speed: 7
   shootSpell: 0
-  passiveSpell: 0
   jump: 15
   healthLossMultiplier: 1
   manaRecovery: 0.000001

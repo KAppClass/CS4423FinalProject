@@ -28,6 +28,7 @@ public class ShootChest : MonoBehaviour
         if(inventory.unopened && Input.GetKeyDown(KeyCode.E))
         {
             player.AssignShootSpell(chosenSpell);
+            playerSO.spellList.Add(chosenSpell);
             //inventory.shootInventory.RemoveAt(index);
             inventory.unopened = false;
         }

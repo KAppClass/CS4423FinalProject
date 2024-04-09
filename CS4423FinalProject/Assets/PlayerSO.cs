@@ -15,6 +15,8 @@ public class PlayerSO : ScriptableObject
     public float mana = 10f;
     public float speed = 7f;
     public int shootSpell = 0;
+    public List<int> spellList;
+    public int trackSpell = 0;
     public int meleeSpell = 0;
     public int passiveSpell = 0;
 

@@ -31,11 +31,20 @@ public class Player_Input : MonoBehaviour
 
         if(Input.GetKey(KeyCode.D)) { input.x += 1; }
 
-        if(Input.GetKeyDown(KeyCode.Space)) { movement.JumpPlayer(); }
+        if(Input.GetKeyDown(KeyCode.Space)) { 
+            
+            movement.JumpPlayer(); }
 
         if( Input.GetMouseButtonDown(0))
         { 
             shooter.ShootSpells(playerSO.shootSpell, Camera.main.ScreenToWorldPoint(Input.mousePosition), 0); 
+
+        }
+
+        if( Input.GetMouseButtonDown(1))
+        { 
+            playerSO.trackSpell = (playerSO.trackSpell+1)%playerSO.spellList.Count;
+            playerSO.shootSpell = playerSO.spellList[playerSO.trackSpell];
 
         }
         
