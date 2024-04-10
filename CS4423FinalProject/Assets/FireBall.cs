@@ -7,25 +7,13 @@ public class FireBall : MonoBehaviour
 
     [Header("Stats")]
 
-    [SerializeField] float damage = 2f;
-    [SerializeField] float cost = 2f;
-    [SerializeField] float speed = 5f;
-    [SerializeField] float damageMultiplier = 2f;
-    [SerializeField] float multiplierTime = 4f;
+    [SerializeField] const float damage = 3f;
+    [SerializeField] const float cost = 4f;
+    [SerializeField] const float speed = 5f;
+    [SerializeField] const float damageMultiplier = 4.5f;
+    [SerializeField] const float multiplierTime = 6f;
 
     [SerializeField] HealthSystem healthSystem;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnTriggerEnter2D(Collider2D obj)
     {

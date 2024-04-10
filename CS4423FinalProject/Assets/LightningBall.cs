@@ -7,11 +7,11 @@ public class LightingBall : MonoBehaviour
 
     [Header("Stats")]
 
-    [SerializeField] float damage = 2f;
-    [SerializeField] float cost = 2f;
-    [SerializeField] float speed = 5f;
-    [SerializeField] float damageMultiplier = 2f;
-    [SerializeField] float multiplierTime = 4f;
+    [SerializeField] const float damage = 4.5f;
+    [SerializeField] const float cost = 5f;
+    [SerializeField] const float speed = 10f;
+    [SerializeField] const float damageMultiplier = 5.5f;
+    [SerializeField] const float multiplierTime = 6f;
 
     [SerializeField] HealthSystem healthSystem;
 

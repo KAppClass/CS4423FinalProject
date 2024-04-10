@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceBall : MonoBehaviour
+public class BasicBall : MonoBehaviour
 {
 
     [Header("Stats")]
 
-    [SerializeField] const float damage = 2f;
-    [SerializeField] const float cost = 1f;
-    [SerializeField] const float speed = 3f;
-    [SerializeField] const float damageMultiplier = 5f;
-    [SerializeField] const float multiplierTime = 4f;
+    [SerializeField] const float damage = 1f;
+    [SerializeField] const float cost = 0.5f;
+    [SerializeField] const float speed = 5f;
+    [SerializeField] const float damageMultiplier = 1f;
+    [SerializeField] const float multiplierTime = 1f;
 
     [SerializeField] HealthSystem healthSystem;
 
