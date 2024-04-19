@@ -5,7 +5,6 @@ using UnityEngine;
 public class PassiveChest : MonoBehaviour
 {
     [SerializeField] PlayerSO playerSO;
-    [SerializeField] Player player;
     [SerializeField] InventorySO inventory;
     [SerializeField] int chosenSpell;
     //[SerializeField] List<int> spellList;
@@ -36,7 +35,7 @@ public class PassiveChest : MonoBehaviour
 
     void ChooseSpell()
     {
-        index = Random.Range(0,(inventory.shootInventory.Count-1));
+        index = Random.Range(0,(inventory.passiveInventory.Count));
         chosenSpell = inventory.shootInventory[index];
     }
 }

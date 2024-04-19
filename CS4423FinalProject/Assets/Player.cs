@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         
     }
 
-    public void TempChangeMultiplier(float multiplier, float time)
+    public void TempChangeMultiplier(float multiplier)
     {
         
         defaultMultiplier = multiplier;
@@ -153,7 +153,6 @@ public class Player : MonoBehaviour
     {
         shootSpell = spell;
         playerSO.shootSpell = spell;
-        Debug.Log("Spell: " + shootSpell);
     }
 
     public void ChangeShield(float shield)

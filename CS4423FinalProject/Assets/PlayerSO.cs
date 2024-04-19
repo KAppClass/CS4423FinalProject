@@ -24,4 +24,5 @@ public class PlayerSO : ScriptableObject
     public float healthLossMultiplier = 1f;
     public float manaRecovery = 0.5f;
 
+    public int curScene = 1;
 }

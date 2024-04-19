@@ -16,3 +16,11 @@ MonoBehaviour:
   firstHealth: 8
   firstMana: 18
   firstMaxMana: 20
+  secondOriginalHealth: 30
+  secondHealth: 30
+  secondMana: 0
+  secondMaxMana: 0
+  thirdOriginalHealth: 0
+  thirdHealth: 0
+  thirdMana: 0
+  thirdMaxMana: 0

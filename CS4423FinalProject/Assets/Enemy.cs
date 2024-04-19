@@ -39,13 +39,24 @@ public class Enemy : MonoBehaviour
         {
              if(this.tag == "Enemy1")
             {
-                Debug.Log("Hit",this);
                 this.health = enemySO.firstOriginalHealth;
                 this.mana = enemySO.firstMaxMana;
                 this.maxMana = enemySO.firstMaxMana;
             }  
 
-            
+            if(this.tag == "Enemy2")
+            {
+                this.health = enemySO.secondOriginalHealth;
+                this.mana = enemySO.secondMaxMana;
+                this.maxMana = enemySO.secondMaxMana;
+            }
+
+            if(this.tag == "Enemy3")
+            {
+                this.health = enemySO.thirdOriginalHealth;
+                this.mana = enemySO.thirdMaxMana;
+                this.maxMana = enemySO.thirdMaxMana;
+            }  
         
         }
 
@@ -70,6 +81,12 @@ public class Enemy : MonoBehaviour
             enemySO.firstMana = mana;
         }
 
+        if ( enemySO != null)
+        {
+            enemySO.secondHealth = health;
+            enemySO.secondMana = mana;
+        }
+
     }
 
 
@@ -79,7 +96,7 @@ public class Enemy : MonoBehaviour
         if (this.health <= 0)
             { this.health = 0; 
             door.OpenExit();
-            gameObject.active = false;}
+            gameObject.SetActive(false);}
     }
 
  

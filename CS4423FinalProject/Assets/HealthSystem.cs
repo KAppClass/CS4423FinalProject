@@ -29,9 +29,9 @@ public class HealthSystem : MonoBehaviour
         
     }
 
-    public void PlayerLoseHealth(float loss, float multiplier, float time)
+    public void PlayerLoseHealth(float loss, float multiplier)
     {
-        player.TempChangeMultiplier(multiplier, time);
+        player.TempChangeMultiplier(multiplier);
         if (playerSO.shield != 0)
         {
             player.ReduceShield(loss);

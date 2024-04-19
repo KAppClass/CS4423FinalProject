@@ -29,14 +29,14 @@ public class ShootChest : MonoBehaviour
         {
             player.AssignShootSpell(chosenSpell);
             playerSO.spellList.Add(chosenSpell);
-            //inventory.shootInventory.RemoveAt(index);
+            inventory.shootInventory.RemoveAt(index);
             inventory.unopened = false;
         }
     }
 
     void ChooseSpell()
     {
-        index = Random.Range(0,(inventory.shootInventory.Count-1));
+        index = Random.Range(0,(inventory.shootInventory.Count));
         chosenSpell = inventory.shootInventory[index];
     }
 }

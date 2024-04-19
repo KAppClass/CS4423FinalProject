@@ -22,7 +22,7 @@ public class FireBall : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        if (obj.gameObject.tag == "Enemy1")
+        if (obj.gameObject.tag == "Enemy1" || obj.gameObject.tag == "Enemy2")
         {
             //Debug.Log("This",this);
             

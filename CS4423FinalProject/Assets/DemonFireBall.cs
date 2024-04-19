@@ -47,7 +47,7 @@ public class DemonFireBall : MonoBehaviour
         if (obj.gameObject.tag == "Player")
         {
             // Debug.Log("Trigger Working", this);
-            healthSystem.PlayerLoseHealth(damage, damageMultiplier, multiplierTime);
+            healthSystem.PlayerLoseHealth(damage, damageMultiplier);
             Destroy(this.gameObject);
         }
 

@@ -10,11 +10,11 @@ public class DoorManager : MonoBehaviour
 
     public void OpenExit()
     {
-        doorLeave.gameObject.active = false;
+        doorLeave.gameObject.SetActive(false);
     }
 
     public void CloseEntrance()
     {
-        doorEnter.gameObject.active = true;
+        doorEnter.gameObject.SetActive(true);
     }
 }

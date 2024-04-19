@@ -15,7 +15,7 @@ public class RoomActivation : MonoBehaviour
             door.CloseEntrance();
             if(enemy != null)
             {enemy.Attack();}
-            this.gameObject.active = false;
+            this.gameObject.SetActive(false);
         }
     }
 }
