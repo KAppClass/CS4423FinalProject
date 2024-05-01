@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Enemy SO
   m_EditorClassIdentifier: 
   firstOriginalHealth: 20
-  firstHealth: 8
-  firstMana: 18
+  firstHealth: 30
+  firstMana: 12
   firstMaxMana: 20
   secondOriginalHealth: 30
   secondHealth: 30
-  secondMana: 0
-  secondMaxMana: 0
+  secondMana: 12
+  secondMaxMana: 20
   thirdOriginalHealth: 0
   thirdHealth: 0
   thirdMana: 0

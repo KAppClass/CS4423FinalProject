@@ -223,6 +223,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1004930419}
+    - target: {fileID: 1818286188045795189, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818286188045795189, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2245201346553347570, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.06
@@ -279,6 +287,10 @@ PrefabInstance:
       propertyPath: manaManager
       value: 
       objectReference: {fileID: 1573778216}
+    - target: {fileID: 6854443980943593454, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 7447740807130455281, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: checkpoints.Array.size
       value: 13
@@ -374,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3715931649019802933, guid: 1da1e335330b99c459fb3f87d1570acc, type: 3}
       propertyPath: m_Name
-      value: Enviroment3
+      value: Enviroment2
       objectReference: {fileID: 0}
     - target: {fileID: 4490143261338896396, guid: 1da1e335330b99c459fb3f87d1570acc, type: 3}
       propertyPath: enemy
@@ -420,6 +432,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5123206984485000355, guid: 1da1e335330b99c459fb3f87d1570acc, type: 3}
+      propertyPath: playerSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
     - target: {fileID: 6332455564432776746, guid: 1da1e335330b99c459fb3f87d1570acc, type: 3}
       propertyPath: health
       value: 
@@ -846,6 +862,10 @@ PrefabInstance:
     - target: {fileID: 564213737915029670, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 564213737915029670, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: iceBall
