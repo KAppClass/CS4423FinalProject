@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3879913498421721132}
   - component: {fileID: 2242970329677439540}
   - component: {fileID: 6498279435609887672}
-  - component: {fileID: 6678574445618447319}
   m_Layer: 3
   m_Name: Surroundings
   m_TagString: Enviroment
@@ -64,7 +63,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -126,17 +125,3 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 80
---- !u!114 &6678574445618447319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4949174719084723377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 226da387bcf301643915db41d17c4727, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 0}
-  loss: 0.5

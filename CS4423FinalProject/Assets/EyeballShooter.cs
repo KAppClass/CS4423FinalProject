@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class EyeballShooter : MonoBehaviour
 {
-
+    [Header("Characters")]
     [SerializeField] Player player;
     [SerializeField] Enemy enemy;
+
+    [Header("Door")]
+    [SerializeField] DoorLeave doorLeave;
+
+    [Header("Spell")]
     [SerializeField] DemonFireBall fireBall;
 
     bool playerSpotted = false;
@@ -24,15 +29,13 @@ public class EyeballShooter : MonoBehaviour
 
 
 
-    void ShootSpell()
+    public void ShootSpell()
     {
         StartCoroutine(ShootRoutine());
         IEnumerator ShootRoutine()
         {
-            while(true)
+            while(doorLeave.gameObject.activeSelf)
             {
-                if(enemy.GetHealth() == 0)
-                    break;
                 RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
 
                 Vector3 directon = player.transform.position * 10;
@@ -48,6 +51,8 @@ public class EyeballShooter : MonoBehaviour
                         
                             
                 }
+
+                yield return new WaitForSeconds(1f);
             }
         }
         

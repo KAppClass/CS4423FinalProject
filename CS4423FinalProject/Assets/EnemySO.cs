@@ -9,14 +9,20 @@ public class EnemySO : ScriptableObject
     public float firstHealth;
     public float firstMana;
     public float firstMaxMana;
+    public float firstSpeed;
+    public float firstShootTime;
 
     public float secondOriginalHealth;
     public float secondHealth;
     public float secondMana;
     public float secondMaxMana;
+    public float secondSpeed;
+    public float secondShootTime;
 
     public float thirdOriginalHealth;
     public float thirdHealth;
     public float thirdMana;
     public float thirdMaxMana;
+    public float thirdSpeed;
+    public float thirdShootTime;
 }

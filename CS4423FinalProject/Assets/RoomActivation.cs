@@ -14,7 +14,10 @@ public class RoomActivation : MonoBehaviour
         {
             door.CloseEntrance();
             if(enemy != null)
-            {enemy.Attack();}
+            {
+                enemy.GetComponent<CheckpointMovementSystem>().Move();
+                enemy.Attack();
+            }
             this.gameObject.SetActive(false);
         }
     }

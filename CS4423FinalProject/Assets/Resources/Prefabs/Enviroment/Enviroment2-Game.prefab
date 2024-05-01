@@ -188,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4705844931437247818}
   m_Layer: 0
-  m_Name: Enviroment2
+  m_Name: Enviroment2-Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,6 +846,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009660107900450938, guid: 5683c75b793768f4dba2c3ca3decc69e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879913498421721132, guid: 5683c75b793768f4dba2c3ca3decc69e, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4949174719084723377, guid: 5683c75b793768f4dba2c3ca3decc69e, type: 3}

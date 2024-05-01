@@ -8,12 +8,12 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] float maxMana;
     [SerializeField] float mana;
-    [SerializeField] float speed;
     [SerializeField] int spell;
     [SerializeField] float jump;
     [SerializeField] float healthLossMultiplier;
     [SerializeField] float manaRecovery;
     [SerializeField] float waitTime;
+    float shootTime;
 
     [Header("Necessary Systems")]
 
@@ -63,12 +63,7 @@ public class Enemy : MonoBehaviour
         //Debug.Log("Current Health " + health);
 
         defaultMultiplier = healthLossMultiplier;
-
-        //Debug.Log("Update Enemy Health: " + this.health + " " + this.name, this);
-        //render = GetComponent<SpriteRenderer>();
         
-
-        //Attack();
 
     }
 
@@ -158,17 +153,10 @@ public class Enemy : MonoBehaviour
         {
             
             while(true){
-                //Debug.Log("Health Attack: "+health,this);
-                //Debug.Log("Mana: " + mana, this);
                 
-                    //Debug.Log("Dead",this);}
-                    //Debug.Log("Hit Mana: " + mana, this);
                 if(mana > 0)
                 {
                     if (health <= 0)
-                        {
-                            Debug.Log("Should Stop");
-                            break;}
                     //Debug.Log("Hit Mana: " + mana, this);
                     shooter.ShootSpells(spell, player.transform.position, 1);              
                     yield return new WaitForSeconds(3f);
@@ -178,9 +166,6 @@ public class Enemy : MonoBehaviour
 
                 if(mana == 0)
                 {
-                    if (health <= 0)
-                        {Debug.Log("Should Stop");
-                        break;}
                     //Debug.Log("Hit Mana", this);
                     RecoverMana(manaRecovery);
                     //Debug.Log("Hit Coroutine: " + mana, this);
