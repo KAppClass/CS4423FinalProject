@@ -13,14 +13,20 @@ MonoBehaviour:
   m_Name: Enemy SO
   m_EditorClassIdentifier: 
   firstOriginalHealth: 20
-  firstHealth: 30
-  firstMana: 12
+  firstHealth: 20
+  firstMana: 14
   firstMaxMana: 20
+  firstSpeed: 0.8
+  firstShootTime: 0
   secondOriginalHealth: 30
-  secondHealth: 30
-  secondMana: 12
+  secondHealth: 20
+  secondMana: 14
   secondMaxMana: 20
-  thirdOriginalHealth: 0
-  thirdHealth: 0
-  thirdMana: 0
-  thirdMaxMana: 0
+  secondSpeed: 0.5
+  secondShootTime: 0
+  thirdOriginalHealth: 50
+  thirdHealth: 50
+  thirdMana: 10
+  thirdMaxMana: 10
+  thirdSpeed: 0
+  thirdShootTime: 0

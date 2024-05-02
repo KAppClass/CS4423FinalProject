@@ -6,14 +6,14 @@ public class Enemy : MonoBehaviour
 {
     [Header("Stats")]
 
+    [SerializeField] float health;
     [SerializeField] float maxMana;
     [SerializeField] float mana;
     [SerializeField] int spell;
-    [SerializeField] float jump;
     [SerializeField] float healthLossMultiplier;
     [SerializeField] float manaRecovery;
     [SerializeField] float waitTime;
-    float shootTime;
+    [SerializeField] float shootTime;
 
     [Header("Necessary Systems")]
 
@@ -21,9 +21,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] EnemyShooter shooter;
     [SerializeField] Player player;
     [SerializeField] DoorManager door;
-
-
-    float health;
 
 
     private float defaultMultiplier;
@@ -39,24 +36,26 @@ public class Enemy : MonoBehaviour
         {
              if(this.tag == "Enemy1")
             {
-                this.health = enemySO.firstOriginalHealth;
-                this.mana = enemySO.firstMaxMana;
-                this.maxMana = enemySO.firstMaxMana;
+                enemySO.firstOriginalHealth = this.health;
+                enemySO.firstMaxMana = this.mana;
+                enemySO.firstShootTime = this.shootTime;
             }  
 
             if(this.tag == "Enemy2")
             {
-                this.health = enemySO.secondOriginalHealth;
-                this.mana = enemySO.secondMaxMana;
-                this.maxMana = enemySO.secondMaxMana;
+                enemySO.secondOriginalHealth = this.health;
+                enemySO.secondMaxMana = this.mana;
+                enemySO.secondShootTime = this.shootTime;
             }
 
             if(this.tag == "Enemy3")
             {
-                this.health = enemySO.thirdOriginalHealth;
-                this.mana = enemySO.thirdMaxMana;
-                this.maxMana = enemySO.thirdMaxMana;
+                enemySO.thirdOriginalHealth = this.health;
+                enemySO.thirdMaxMana = this.mana;
+                enemySO.thirdShootTime = this.shootTime;
             }  
+
+            this.maxMana = this.mana;
         
         }
 
@@ -159,7 +158,7 @@ public class Enemy : MonoBehaviour
                     if (health <= 0)
                     //Debug.Log("Hit Mana: " + mana, this);
                     shooter.ShootSpells(spell, player.transform.position, 1);              
-                    yield return new WaitForSeconds(3f);
+                    yield return new WaitForSeconds(shootTime);
                     
                     //Debug.Log("Hit Mana: " + mana, this);
                 }
