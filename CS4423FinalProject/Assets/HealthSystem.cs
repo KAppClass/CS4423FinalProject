@@ -8,7 +8,9 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] PlayerSO playerSO;
     [SerializeField] Enemy first;
     [SerializeField] EnemySO enemySO;
-    //[SerializeField] Enemy enemy;
+    bool giveMult = true;
+    bool giveSpeed = true;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +24,18 @@ public class HealthSystem : MonoBehaviour
     }
 
 
-    public void FirstEnemyNegativeHealth(float loss, float multiplier, float time)
+    public void EnemyNegativeHealth(float loss, float multiplier, float speed)
     {
-        first.TempChangeMultiplier(multiplier, time);
+        if (giveMult && multiplier > 0)
+        {
+            first.ChangeMultiplier(multiplier);
+            giveMult = false;
+        }
+        if (giveSpeed && speed > 0)
+        {
+            first.ChangeSpeed(speed);
+            giveSpeed = false;
+        }
         first.LoseHealth(loss);
         
     }

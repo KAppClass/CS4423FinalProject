@@ -10,8 +10,6 @@ public class BasicBall : MonoBehaviour
     [SerializeField] const float damage = 1f;
     [SerializeField] const float cost = 0.5f;
     [SerializeField] const float speed = 5f;
-    [SerializeField] const float damageMultiplier = 1f;
-    [SerializeField] const float multiplierTime = 1f;
 
     [SerializeField] HealthSystem healthSystem;
 
@@ -22,14 +20,14 @@ public class BasicBall : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        if (obj.gameObject.tag == "Enemy1")
+        if (obj.gameObject.tag == "Enemy1" || obj.gameObject.tag == "Enemy2" || obj.gameObject.tag == "Enemy3")
         {
             //Debug.Log("This",this);
             
             
             // if(healthSystem == null)
             //     Debug.Log("Health is Null");
-            healthSystem.FirstEnemyNegativeHealth(damage, damageMultiplier, multiplierTime);
+            healthSystem.EnemyNegativeHealth(damage, 0, 0);
             Destroy(this.gameObject);
         }
         // if (obj.gameObject.tag == "Player")
@@ -44,5 +42,4 @@ public class BasicBall : MonoBehaviour
     public float GetDamage() {return damage;}
     public float GetCost() {return cost;}
     public float GetSpeed() {return speed;}
-    public float GetDamageMultiplier() {return damageMultiplier;}
 }

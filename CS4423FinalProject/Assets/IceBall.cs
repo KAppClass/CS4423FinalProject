@@ -7,11 +7,11 @@ public class IceBall : MonoBehaviour
 
     [Header("Stats")]
 
-    [SerializeField] const float damage = 2f;
-    [SerializeField] const float cost = 1f;
-    [SerializeField] const float speed = 3f;
-    [SerializeField] const float damageMultiplier = 5f;
-    [SerializeField] const float multiplierTime = 4f;
+    const float damage = 2f;
+    const float cost = 1f;
+    const float speed = 3f;
+    const float reduceSpeed = 2f;
+
 
     [SerializeField] HealthSystem healthSystem;
 
@@ -29,7 +29,7 @@ public class IceBall : MonoBehaviour
             
             // if(healthSystem == null)
             //     Debug.Log("Health is Null");
-            healthSystem.FirstEnemyNegativeHealth(damage, damageMultiplier, multiplierTime);
+            healthSystem.EnemyNegativeHealth(damage, 0, reduceSpeed);
             Destroy(this.gameObject);
         }
         // if (obj.gameObject.tag == "Player")
@@ -44,5 +44,4 @@ public class IceBall : MonoBehaviour
     public float GetDamage() {return damage;}
     public float GetCost() {return cost;}
     public float GetSpeed() {return speed;}
-    public float GetDamageMultiplier() {return damageMultiplier;}
 }

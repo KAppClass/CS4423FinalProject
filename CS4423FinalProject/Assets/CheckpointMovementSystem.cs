@@ -19,8 +19,8 @@ public class CheckpointMovementSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // if ( checkpoints.Count > 0)
-        //     Move();
+        if ( enemySO == null)
+             Move();
     }
     public void Move()
     {
@@ -29,13 +29,14 @@ public class CheckpointMovementSystem : MonoBehaviour
         {
             if (checkpoints.Count > 0)
             {
-                if(this.gameObject.tag == "Enemy1")
-                    moveTime = enemySO.firstSpeed;
-                else if(this.gameObject.tag == "Enemy2")
-                    moveTime = enemySO.secondSpeed;
 
                 while(true)
                 {
+                    if(this.gameObject.tag == "Enemy1")
+                        moveTime = enemySO.firstSpeed;
+                    else if(this.gameObject.tag == "Enemy2")
+                        moveTime = enemySO.secondSpeed;
+
                     yield return new WaitForSeconds(waitTime);
                     float timer = 0;
                     int nextIndex = (index+1)%checkpoints.Count;

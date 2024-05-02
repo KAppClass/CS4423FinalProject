@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootSpell : MonoBehaviour
 {
     [Header("Spells")]
+    [SerializeField] BasicBall basicBall;
     [SerializeField] FireBall fireBall;
     [SerializeField] IceBall iceBall;
     [SerializeField] LightingBall lightingBall;
@@ -29,6 +30,14 @@ public class ShootSpell : MonoBehaviour
         switch (spell)
         {
             case 0:
+                if (playerSO.mana >= basicBall.GetCost())
+                    {
+                        //Debug.Log("Shooter User2: " + playerSO.mana,this);
+                        ShootBasicBall(aim);
+                        manaManager.ReduceMana(basicBall.GetCost(), type);
+                    }
+                break;
+            case 1:
                      //Debug.Log("Shooter User1: " + playerSO.mana,this);
 
                     if (playerSO.mana >= fireBall.GetCost())
@@ -39,7 +48,7 @@ public class ShootSpell : MonoBehaviour
                     }
             
                 break;
-            case 1:
+            case 2:
             if (playerSO.mana >= iceBall.GetCost())
                     {
                         //Debug.Log("Shooter User2: " + playerSO.mana,this);
@@ -48,7 +57,7 @@ public class ShootSpell : MonoBehaviour
                     }
             
                 break;
-            case 2:
+            case 3:
             if (playerSO.mana >= lightingBall.GetCost())
                     {
                         //Debug.Log("Shooter User2: " + playerSO.mana,this);
@@ -86,6 +95,14 @@ public class ShootSpell : MonoBehaviour
         LightingBall spell = Instantiate(lightingBall, transform.position, Quaternion.identity);
         spell.transform.rotation = Quaternion.LookRotation(transform.forward, aim - transform.position);
         spell.GetComponent<Rigidbody2D>().velocity = spell.transform.up * lightingBall.GetSpeed();
+        //Destroy(spell,10);
+    }
+
+    void ShootBasicBall(Vector3 aim)
+    {
+        BasicBall spell = Instantiate(basicBall, transform.position, Quaternion.identity);
+        spell.transform.rotation = Quaternion.LookRotation(transform.forward, aim - transform.position);
+        spell.GetComponent<Rigidbody2D>().velocity = spell.transform.up * basicBall.GetSpeed();
         //Destroy(spell,10);
     }
 

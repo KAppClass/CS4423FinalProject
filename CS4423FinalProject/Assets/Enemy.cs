@@ -36,23 +36,26 @@ public class Enemy : MonoBehaviour
         {
              if(this.tag == "Enemy1")
             {
-                enemySO.firstOriginalHealth = this.health;
-                enemySO.firstMaxMana = this.mana;
-                enemySO.firstShootTime = this.shootTime;
+                this.health = enemySO.firstHealth;
+                this.mana = enemySO.firstMaxMana;
+                this.manaRecovery = enemySO.firstManaRecovery;
+                this.shootTime = enemySO.firstShootTime;
             }  
 
             if(this.tag == "Enemy2")
             {
-                enemySO.secondOriginalHealth = this.health;
-                enemySO.secondMaxMana = this.mana;
-                enemySO.secondShootTime = this.shootTime;
+                this.health = enemySO.secondHealth;
+                this.mana = enemySO.secondMaxMana;
+                this.manaRecovery = enemySO.secondManaRecovery;
+                this.shootTime = enemySO.secondShootTime;
             }
 
             if(this.tag == "Enemy3")
             {
-                enemySO.thirdOriginalHealth = this.health;
-                enemySO.thirdMaxMana = this.mana;
-                enemySO.thirdShootTime = this.shootTime;
+                this.health = enemySO.thirdHealth;
+                this.mana = enemySO.thirdMaxMana;
+                this.manaRecovery = enemySO.thirdManaRecovery;
+                this.shootTime = enemySO.thirdShootTime;
             }  
 
             this.maxMana = this.mana;
@@ -81,6 +84,14 @@ public class Enemy : MonoBehaviour
             enemySO.secondMana = mana;
         }
 
+        if ( enemySO != null)
+        {
+            enemySO.thirdHealth = health;
+            enemySO.thirdMana = mana;
+        }
+
+        Debug.Log("Shoot Speed" + shootTime);
+
     }
 
 
@@ -94,19 +105,25 @@ public class Enemy : MonoBehaviour
     }
 
  
-    public void TempChangeMultiplier(float multiplier, float time)
+    public void ChangeMultiplier(float multiplier)
     {
-       
         defaultMultiplier = multiplier;
-         
-        // float timer = 0;
-        // while(timer < time)
-        // {
-        //     timer+=Time.deltaTime;
-        //     //Debug.Log(""+defaultMultiplier + " Time: " + timer);
-        // }
-        // defaultMultiplier= healthLossMultiplier;
-        // //Debug.Log("Multiplier: " + defaultMultiplier);
+    }
+
+    public void ChangeSpeed(float speed)
+    {
+        this.shootTime = this.shootTime*speed;
+        this.manaRecovery = this.manaRecovery*speed;
+        if(this.tag == "Enemy1")
+            {
+                enemySO.firstSpeed = enemySO.firstSpeed*speed;
+            }  
+
+        if(this.tag == "Enemy2")
+        {
+            enemySO.secondSpeed = enemySO.secondSpeed*speed;
+        }
+        
     }
 
     public void ReduceMana(float cost)
@@ -123,22 +140,9 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void RecoverMana(float recover){
+    void RecoverMana(){
 
-            while(mana < maxMana){
-                
-                GainMana(recover);
-            }
-
-    }
-
-    void GainMana(float gain)
-    {
-        this.mana += gain;
-        if (mana >= maxMana)
-            { this.mana = maxMana; }
-        //Debug.Log("Recovered Mana:  " + mana);
-        //Debug.Log("Player " + mana);
+        mana = maxMana;
 
     }
 
@@ -155,8 +159,7 @@ public class Enemy : MonoBehaviour
                 
                 if(mana > 0)
                 {
-                    if (health <= 0)
-                    //Debug.Log("Hit Mana: " + mana, this);
+
                     shooter.ShootSpells(spell, player.transform.position, 1);              
                     yield return new WaitForSeconds(shootTime);
                     
@@ -166,9 +169,9 @@ public class Enemy : MonoBehaviour
                 if(mana == 0)
                 {
                     //Debug.Log("Hit Mana", this);
-                    RecoverMana(manaRecovery);
+                    RecoverMana();
                     //Debug.Log("Hit Coroutine: " + mana, this);
-                    yield return new WaitForSeconds(5f);
+                    yield return new WaitForSeconds(manaRecovery);
                 }
 
                 yield return null;

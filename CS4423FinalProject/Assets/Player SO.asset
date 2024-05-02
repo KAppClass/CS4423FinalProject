@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalMaxHealth: 10
   originalMaxMana: 10
-  maxHealth: 20
+  maxHealth: 10
   maxMana: 10
-  shield: 0
-  health: 999944
-  mana: 5.5
+  shield: 9
+  health: 999936
+  mana: 10
   speed: 7
   shootSpell: 2
-  spellList: 000000000200000001000000
+  spellList: 00000000010000000200000003000000
   trackSpell: 1
   meleeSpell: 1
   passiveSpell: 3

@@ -7,11 +7,9 @@ public class LightingBall : MonoBehaviour
 
     [Header("Stats")]
 
-    [SerializeField] const float damage = 4.5f;
+    [SerializeField] const float damage = 5.5f;
     [SerializeField] const float cost = 5f;
     [SerializeField] const float speed = 10f;
-    [SerializeField] const float damageMultiplier = 5.5f;
-    [SerializeField] const float multiplierTime = 6f;
 
     [SerializeField] HealthSystem healthSystem;
 
@@ -41,7 +39,7 @@ public class LightingBall : MonoBehaviour
             
             // if(healthSystem == null)
             //     Debug.Log("Health is Null");
-            healthSystem.FirstEnemyNegativeHealth(damage, damageMultiplier, multiplierTime);
+            healthSystem.EnemyNegativeHealth(damage, 0, 0);
             Destroy(this.gameObject);
         }
         // if (obj.gameObject.tag == "Player")
@@ -56,5 +54,4 @@ public class LightingBall : MonoBehaviour
     public float GetDamage() {return damage;}
     public float GetCost() {return cost;}
     public float GetSpeed() {return speed;}
-    public float GetDamageMultiplier() {return damageMultiplier;}
 }
