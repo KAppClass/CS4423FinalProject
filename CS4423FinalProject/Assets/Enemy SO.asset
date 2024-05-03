@@ -14,28 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstOriginalHealth: 50
   firstOriginalMana: 20
-  firstOriginalSpeed: 3
-  firstHealth: 50
-  firstMana: 20
+  firstOriginalSpeed: 2
+  firstMaxHealth: 50
+  firstHealth: 7.25
+  firstMana: 10
   firstManaRecovery: 3.5
   firstMaxMana: 20
-  firstSpeed: 3
-  firstShootTime: 1
+  firstSpeed: 4
+  firstShootTime: 2
   secondOriginalHealth: 75
   secondOriginalMana: 30
   secondOriginalSpeed: 2.5
-  secondHealth: 75
-  secondMana: 40
-  secondManaRecovery: 2.5
+  secondMaxHealth: 75
+  secondHealth: 7.25
+  secondMana: 10
+  secondManaRecovery: 1.5
   secondMaxMana: 20
-  secondSpeed: 0.5
-  secondShootTime: 0
+  secondSpeed: 6
+  secondShootTime: 2
   thirdOriginalHealth: 100
   thirdOriginalMana: 40
   thirdOriginalSpeed: 0
-  thirdHealth: 100
-  thirdMana: 40
-  thirdManaRecovery: 1.5
-  thirdMaxMana: 10
+  thirdMaxHealth: 100
+  thirdHealth: 7.25
+  thirdMana: 10
+  thirdManaRecovery: 2
+  thirdMaxMana: 40
   thirdSpeed: 0
   thirdShootTime: 1.5

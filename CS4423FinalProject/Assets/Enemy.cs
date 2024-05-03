@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
         {
              if(this.tag == "Enemy1")
             {
-                this.health = enemySO.firstHealth;
+                this.health = enemySO.firstMaxHealth;
                 this.mana = enemySO.firstMaxMana;
                 this.manaRecovery = enemySO.firstManaRecovery;
                 this.shootTime = enemySO.firstShootTime;
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
 
             if(this.tag == "Enemy2")
             {
-                this.health = enemySO.secondHealth;
+                this.health = enemySO.secondMaxHealth;
                 this.mana = enemySO.secondMaxMana;
                 this.manaRecovery = enemySO.secondManaRecovery;
                 this.shootTime = enemySO.secondShootTime;
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
 
             if(this.tag == "Enemy3")
             {
-                this.health = enemySO.thirdHealth;
+                this.health = enemySO.thirdMaxHealth;
                 this.mana = enemySO.thirdMaxMana;
                 this.manaRecovery = enemySO.thirdManaRecovery;
                 this.shootTime = enemySO.thirdShootTime;
@@ -62,8 +62,7 @@ public class Enemy : MonoBehaviour
         
         }
 
-        //Debug.Log("Current Health " + health);
-
+        
         defaultMultiplier = healthLossMultiplier;
         
 
@@ -90,7 +89,9 @@ public class Enemy : MonoBehaviour
             enemySO.thirdMana = mana;
         }
 
-        Debug.Log("Shoot Speed" + shootTime);
+        Debug.Log("Current Health " + health);
+
+        //Debug.Log("Shoot Speed" + shootTime);
 
     }
 
@@ -99,9 +100,25 @@ public class Enemy : MonoBehaviour
     {
         this.health -= loss * defaultMultiplier;
         if (this.health <= 0)
-            { this.health = 0; 
+        { 
+            if(this.tag == "Enemy1")
+            {
+                enemySO.firstHealth = 0;
+            }  
+
+            if(this.tag == "Enemy2")
+            {
+                enemySO.secondHealth = 0;
+            }
+
+            if(this.tag == "Enemy2")
+            {
+                enemySO.thirdHealth = 0;
+            }
+
             door.OpenExit();
-            gameObject.SetActive(false);}
+            gameObject.SetActive(false);
+        }
     }
 
  

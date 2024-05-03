@@ -8,6 +8,7 @@ public class EnemySO : ScriptableObject
     public float firstOriginalHealth;
     public float firstOriginalMana;
     public float firstOriginalSpeed;
+    public float firstMaxHealth;
     public float firstHealth;
     public float firstMana;
     public float firstManaRecovery;
@@ -18,6 +19,7 @@ public class EnemySO : ScriptableObject
     public float secondOriginalHealth;
     public float secondOriginalMana;
     public float secondOriginalSpeed;
+    public float secondMaxHealth;
     public float secondHealth;
     public float secondMana;
     public float secondManaRecovery;
@@ -28,6 +30,7 @@ public class EnemySO : ScriptableObject
     public float thirdOriginalHealth;
     public float thirdOriginalMana;
     public float thirdOriginalSpeed;
+    public float thirdMaxHealth;
     public float thirdHealth;
     public float thirdMana;
     public float thirdManaRecovery;

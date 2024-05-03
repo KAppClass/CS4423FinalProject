@@ -38,7 +38,7 @@ public class HotPlatformManager : MonoBehaviour
 
                 yield return new WaitForSeconds(activationTime);
 
-                Debug.Log("Activated", this);
+                //Debug.Log("Activated", this);
 
                 if(enemySO.secondHealth == 0)
                     break;
@@ -48,11 +48,16 @@ public class HotPlatformManager : MonoBehaviour
                 platforms[platform3].gameObject.SetActive(true);
 
                 if(enemySO.secondHealth == 0)
+                {
+                    platforms[platform1].gameObject.SetActive(false);
+                    platforms[platform2].gameObject.SetActive(false);
+                    platforms[platform3].gameObject.SetActive(false);
                     break;
+                }
 
                 yield return new WaitForSeconds(waitActivation);
 
-                Debug.Log("Activated", this);
+                //Debug.Log("Activated", this);
 
                 platforms[platform1].gameObject.SetActive(false);
                 platforms[platform2].gameObject.SetActive(false);

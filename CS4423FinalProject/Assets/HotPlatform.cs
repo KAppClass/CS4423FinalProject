@@ -5,6 +5,7 @@ using UnityEngine;
 public class HotPlatform : MonoBehaviour
 {
     [SerializeField] HealthSystem health;
+    [SerializeField] DoorLeave door;
     [SerializeField] float loss = 0.5f;
     [SerializeField] float wait = 5f;
 
@@ -22,7 +23,7 @@ public class HotPlatform : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D obj)
     {
-        if (obj.gameObject.tag == "Player")
+        while (door.gameObject.activeSelf && obj.gameObject.tag == "Player")
         {
             // Debug.Log("Trigger Working", this);
             health.PlayerLoseHealth(loss, 1f);

@@ -859,6 +859,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1172604588}
     - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
+      propertyPath: basicBall
+      value: 
+      objectReference: {fileID: 2087900555}
+    - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: manaManager
       value: 
       objectReference: {fileID: 27048934}
@@ -1097,6 +1101,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8162330695566700206, guid: c3070da2b4bc53e4c851bdef1255f67f, type: 3}
+      propertyPath: healthSystem
+      value: 
+      objectReference: {fileID: 1558516190}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2122,7 +2130,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -3440,6 +3448,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56a5840b692f93640a7f50aca49f2813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2087900555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8162330695566700206, guid: c3070da2b4bc53e4c851bdef1255f67f, type: 3}
+  m_PrefabInstance: {fileID: 740689733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed92cbc119687dc4a9f67688a46e541e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
