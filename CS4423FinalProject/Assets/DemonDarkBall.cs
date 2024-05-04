@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemonFireBall : MonoBehaviour
+public class DemonDarkBall : MonoBehaviour
 {
 
     [Header("Stats")]
 
-    [SerializeField] const float damage = 2.5f;
-    [SerializeField] const float cost = 3.5f;
-    [SerializeField] const float speed = 2.5f;
+    [SerializeField] const float damage = 0.5f;
+    [SerializeField] const float speed = 3f;
 
     [SerializeField] HealthSystem healthSystem;
 
@@ -43,6 +42,5 @@ public class DemonFireBall : MonoBehaviour
     }
 
     public float GetDamage() {return damage;}
-    public float GetCost() {return cost;}
     public float GetSpeed() {return speed;}
 }

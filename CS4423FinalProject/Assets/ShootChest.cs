@@ -27,7 +27,6 @@ public class ShootChest : MonoBehaviour
     {
         if(inventory.unopened && Input.GetKeyDown(KeyCode.E))
         {
-            player.AssignShootSpell(chosenSpell);
             playerSO.spellList.Add(chosenSpell);
             inventory.shootInventory.RemoveAt(index);
             inventory.unopened = false;
@@ -39,4 +38,5 @@ public class ShootChest : MonoBehaviour
         index = Random.Range(0,(inventory.shootInventory.Count));
         chosenSpell = inventory.shootInventory[index];
     }
+
 }

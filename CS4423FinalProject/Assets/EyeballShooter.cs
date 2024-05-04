@@ -12,7 +12,7 @@ public class EyeballShooter : MonoBehaviour
     [SerializeField] DoorLeave doorLeave;
 
     [Header("Spell")]
-    [SerializeField] DemonFireBall fireBall;
+    [SerializeField] DemonDarkBall darkBall;
 
     bool playerSpotted = false;
     // Start is called before the first frame update
@@ -47,7 +47,7 @@ public class EyeballShooter : MonoBehaviour
                     playerSpotted = ray.collider.CompareTag("Player");
                                 
                         if ( playerSpotted)        
-                            ShootFireBall(player.transform.position);
+                            ShootDarkBall(player.transform.position);
                         
                             
                 }
@@ -58,11 +58,11 @@ public class EyeballShooter : MonoBehaviour
         
     }
 
-    void ShootFireBall(Vector3 aim)
+    void ShootDarkBall(Vector3 aim)
     {
-        DemonFireBall spell = Instantiate(fireBall, transform.position, Quaternion.identity);
+        DemonDarkBall spell = Instantiate(darkBall, transform.position, Quaternion.identity);
         spell.transform.rotation = Quaternion.LookRotation(transform.forward, aim - transform.position);
-        spell.GetComponent<Rigidbody2D>().velocity = spell.transform.up * fireBall.GetSpeed();
+        spell.GetComponent<Rigidbody2D>().velocity = spell.transform.up * darkBall.GetSpeed();
         //Destroy(spell,10);
     }
 }

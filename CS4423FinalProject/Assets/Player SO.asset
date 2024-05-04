@@ -12,20 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203d187336b9ea445b37ed9f22d403bd, type: 3}
   m_Name: Player SO
   m_EditorClassIdentifier: 
-  originalMaxHealth: 20
-  originalMaxMana: 10
-  maxHealth: 20
-  maxMana: 10
+  originalMaxHealth: 25
+  originalMaxMana: 15
+  maxHealth: 35
+  maxMana: 15
   shield: 0
-  health: 13
-  mana: 9
+  health: 25
+  mana: 15
   speed: 7
-  shootSpell: 1
-  spellList: 0000000001000000020000000300000002000000
-  trackSpell: 1
-  meleeSpell: 1
+  shootSpell: 0
+  spellList: 00000000
+  trackSpell: 0
   passiveSpell: 0
   jump: 15
-  healthLossMultiplier: 1
   manaRecovery: 0.5
-  curScene: 2
+  curScene: 1

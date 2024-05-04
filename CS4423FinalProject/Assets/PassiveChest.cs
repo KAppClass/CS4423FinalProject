@@ -6,8 +6,7 @@ public class PassiveChest : MonoBehaviour
 {
     [SerializeField] PlayerSO playerSO;
     [SerializeField] InventorySO inventory;
-    [SerializeField] int chosenSpell;
-    //[SerializeField] List<int> spellList;
+    int chosenSpell;
     private int index;
     // Start is called before the first frame update
     void Start()

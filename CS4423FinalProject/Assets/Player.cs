@@ -17,9 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] float mana;
     [SerializeField] float speed;
     [SerializeField] int shootSpell;
-    //[SerializeField] int meleeSpell;
     [SerializeField] float jump = 15f;
-    [SerializeField] float healthLossMultiplier = 1f;
     [SerializeField] float manaRecovery;
 
     [Header("Physics")]
@@ -45,16 +43,13 @@ public class Player : MonoBehaviour
             mana = playerSO.mana;
             speed = playerSO.speed;
             jump = playerSO.jump;
-            healthLossMultiplier = playerSO.healthLossMultiplier;
             shootSpell = playerSO.shootSpell;
-            //meleeSpell = playerSO.meleeSpell;
             manaRecovery = playerSO.manaRecovery;
         }
 
          //Debug.Log("PlayerSO " + playerSO.mana);
         //Debug.Log("Player " + mana);
 
-        defaultMultiplier = healthLossMultiplier;
         RecoverMana(manaRecovery);
         
     }
@@ -66,27 +61,16 @@ public class Player : MonoBehaviour
         {
             playerSO.health = health;
             playerSO.mana = mana;
-            playerSO.speed = speed;
-            playerSO.jump = jump;
             playerSO.shield = shield;
         }
-
-        //TestText.singleton.ShowHealth(health);
     }
 
     public void LoseHealth(float loss)
     {
-        this.health -= loss * defaultMultiplier;
+        this.health -= loss;
         if (this.health <= 0)
             { this.health = 0;
             SceneManager.LoadScene("MainMenu");}
-        
-    }
-
-    public void TempChangeMultiplier(float multiplier)
-    {
-        
-        defaultMultiplier = multiplier;
         
     }
 
@@ -139,14 +123,12 @@ public class Player : MonoBehaviour
 
     public void ChangeMaxHealth(float max)
     {
-        maxHealth = max;
-        playerSO.maxHealth = max;
+        maxHealth = playerSO.maxHealth = max;
     }
 
     public void ChangeMaxMana(float max)
     {
-        maxMana = max;
-        playerSO.maxMana = max;
+        maxMana = playerSO.maxMana = max;
     }
 
     public void AssignShootSpell(int spell)
@@ -158,7 +140,6 @@ public class Player : MonoBehaviour
     public void ChangeShield(float shield)
     {
         this.shield = shield;
-        Debug.Log("Player Shield: " + shield);
     }
 
     public void ReduceShield(float loss)

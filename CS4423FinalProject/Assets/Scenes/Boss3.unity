@@ -1175,6 +1175,78 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36513496e1778934aa53d3b529e4711b, type: 3}
+--- !u!1001 &765382163
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3360458664547942606, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: healthSystem
+      value: 
+      objectReference: {fileID: 1558516190}
+    - target: {fileID: 4888008618126903852, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7438484
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766036163421031616, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+      propertyPath: m_Name
+      value: DemonDarkBall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+--- !u!114 &765382164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3360458664547942606, guid: b11e6e73bfbb46f4994a646e5605b700, type: 3}
+  m_PrefabInstance: {fileID: 765382163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd52d76bf2525df429fe4fc58167be85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &783468660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,7 +1525,7 @@ MonoBehaviour:
   player: {fileID: 1878750941}
   enemy: {fileID: 1085373438}
   doorLeave: {fileID: 819896009}
-  fireBall: {fileID: 1512950919}
+  darkBall: {fileID: 765382164}
 --- !u!114 &819896009 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3787123536521330114, guid: 03de71de4593f584d8dcddcef3097b3c, type: 3}
@@ -1565,7 +1637,7 @@ MonoBehaviour:
   player: {fileID: 1878750941}
   enemy: {fileID: 1085373438}
   doorLeave: {fileID: 819896009}
-  fireBall: {fileID: 1512950919}
+  darkBall: {fileID: 765382164}
 --- !u!1 &847966165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,7 +1738,7 @@ MonoBehaviour:
   player: {fileID: 1878750941}
   enemy: {fileID: 1085373438}
   doorLeave: {fileID: 819896009}
-  fireBall: {fileID: 1512950919}
+  darkBall: {fileID: 765382164}
 --- !u!1 &868838493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,17 +2443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e18fc4d57bf4842ad98311796d3282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1512950919 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5192967398847287953, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-  m_PrefabInstance: {fileID: 1810306387}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ed40fbdd7fb82e4d8b15f712ed063f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1517887305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2749,6 +2810,78 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1591073150
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -6676123455872781765, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: healthSystem
+      value: 
+      objectReference: {fileID: 1558516190}
+    - target: {fileID: 4888008618126903852, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7438484
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888008618126903852, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766036163421031616, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+      propertyPath: m_Name
+      value: DemonLightningBall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+--- !u!114 &1591073151 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -6676123455872781765, guid: c4f09ae290d50df41be2c2fcc1ceb883, type: 3}
+  m_PrefabInstance: {fileID: 1591073150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4202698926fd1a4f9d3c8e08ae06cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1655481125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2816,11 +2949,15 @@ PrefabInstance:
     - target: {fileID: 6854443980943593454, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: fireBall
       value: 
-      objectReference: {fileID: 1512950919}
+      objectReference: {fileID: 0}
     - target: {fileID: 6854443980943593454, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: manaManager
       value: 
       objectReference: {fileID: 27048934}
+    - target: {fileID: 6854443980943593454, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
+      propertyPath: lightningBall
+      value: 
+      objectReference: {fileID: 1591073151}
     - target: {fileID: 6854443980943593454, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
       propertyPath: playerLayer.m_Bits
       value: 512
@@ -2842,71 +2979,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72f3301dd0bb11041982a97cdd8213f0, type: 3}
---- !u!1001 &1810306387
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4888008618126903852, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.492342
-      objectReference: {fileID: 0}
-    - target: {fileID: 4888008618126903852, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.8775587
-      objectReference: {fileID: 0}
-    - target: {fileID: 4888008618126903852, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4888008618126903852, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4888008618126903852, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4888008618126903852, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4888008618126903852, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4888008618126903852, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4888008618126903852, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4888008618126903852, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073209325517102912, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5192967398847287953, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: healthSystem
-      value: 
-      objectReference: {fileID: 1558516190}
-    - target: {fileID: 5766036163421031616, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
-      propertyPath: m_Name
-      value: DemonFireBall
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 816a94d88058bae44993cc44e6159bac, type: 3}
 --- !u!1 &1826397401
 GameObject:
   m_ObjectHideFlags: 0
@@ -3007,7 +3079,7 @@ MonoBehaviour:
   player: {fileID: 1878750941}
   enemy: {fileID: 1085373438}
   doorLeave: {fileID: 819896009}
-  fireBall: {fileID: 1512950919}
+  darkBall: {fileID: 765382164}
 --- !u!1 &1875721620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3337,7 +3409,7 @@ MonoBehaviour:
   player: {fileID: 1878750941}
   enemy: {fileID: 1085373438}
   doorLeave: {fileID: 819896009}
-  fireBall: {fileID: 1512950919}
+  darkBall: {fileID: 765382164}
 --- !u!1 &2051834405
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,7 +3510,7 @@ MonoBehaviour:
   player: {fileID: 1878750941}
   enemy: {fileID: 1085373438}
   doorLeave: {fileID: 819896009}
-  fireBall: {fileID: 1512950919}
+  darkBall: {fileID: 765382164}
 --- !u!114 &2056368928 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7117865980487203808, guid: 03de71de4593f584d8dcddcef3097b3c, type: 3}
@@ -3475,7 +3547,8 @@ SceneRoots:
   - {fileID: 760335291}
   - {fileID: 570077347}
   - {fileID: 740689733}
-  - {fileID: 1810306387}
   - {fileID: 637501154}
   - {fileID: 1902533322}
   - {fileID: 474382181}
+  - {fileID: 765382163}
+  - {fileID: 1591073150}

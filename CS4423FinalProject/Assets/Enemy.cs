@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
                 this.mana = enemySO.firstMaxMana;
                 this.manaRecovery = enemySO.firstManaRecovery;
                 this.shootTime = enemySO.firstShootTime;
+                this.spell = 2;
             }  
 
             if(this.tag == "Enemy2")
@@ -48,6 +49,7 @@ public class Enemy : MonoBehaviour
                 this.mana = enemySO.secondMaxMana;
                 this.manaRecovery = enemySO.secondManaRecovery;
                 this.shootTime = enemySO.secondShootTime;
+                this.spell = 0;
             }
 
             if(this.tag == "Enemy3")
@@ -56,6 +58,7 @@ public class Enemy : MonoBehaviour
                 this.mana = enemySO.thirdMaxMana;
                 this.manaRecovery = enemySO.thirdManaRecovery;
                 this.shootTime = enemySO.thirdShootTime;
+                this.spell = 1;
             }  
 
             this.maxMana = this.mana;
@@ -176,7 +179,7 @@ public class Enemy : MonoBehaviour
                 
                 if(mana > 0)
                 {
-
+                    Debug.Log("spell " + spell);
                     shooter.ShootSpells(spell, player.transform.position, 1);              
                     yield return new WaitForSeconds(shootTime);
                     

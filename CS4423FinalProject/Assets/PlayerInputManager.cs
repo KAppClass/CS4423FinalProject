@@ -9,6 +9,8 @@ public class Player_Input : MonoBehaviour
     [SerializeField] MovementManager movement;
     [SerializeField] ShootSpell shooter;
 
+    
+
     //ShootSpell shooter;
 
     void Start()

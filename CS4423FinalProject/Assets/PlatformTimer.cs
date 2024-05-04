@@ -25,7 +25,7 @@ public class PlatformTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(doorEnter.gameObject.activeSelf);
+        //Debug.Log(doorEnter.gameObject.activeSelf);
         if(activate && doorEnter.gameObject.activeSelf)
         {
             AlternatePlatforms();

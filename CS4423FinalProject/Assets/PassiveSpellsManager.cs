@@ -8,9 +8,9 @@ public class PassiveSpellsManager : MonoBehaviour
     [SerializeField] Player player;
 
     [Header("Spell Values")]
-    [SerializeField] float maxHealth = 20f;
-    [SerializeField] float maxMana = 20f;
-    [SerializeField] float shield = 5f;
+    [SerializeField] float maxHealth = 35f;
+    [SerializeField] float maxMana = 25f;
+    [SerializeField] float shield = 10f;
 
     // Start is called before the first frame update
     void Start()

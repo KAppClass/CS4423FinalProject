@@ -40,9 +40,8 @@ public class HealthSystem : MonoBehaviour
         
     }
 
-    public void PlayerLoseHealth(float loss, float multiplier)
+    public void PlayerLoseHealth(float loss)
     {
-        player.TempChangeMultiplier(multiplier);
         if (playerSO.shield != 0)
         {
             player.ReduceShield(loss);

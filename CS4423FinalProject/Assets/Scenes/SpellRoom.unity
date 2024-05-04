@@ -388,6 +388,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2112309507}
     - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
+      propertyPath: basicBall
+      value: 
+      objectReference: {fileID: 1126441975}
+    - target: {fileID: 4785834764139321709, guid: e00c4a6458eb4a24d895823c9cca045c, type: 3}
       propertyPath: manaManager
       value: 
       objectReference: {fileID: 1776879491}
@@ -923,6 +927,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2009660107900450938, guid: 5683c75b793768f4dba2c3ca3decc69e, type: 3}
   m_PrefabInstance: {fileID: 894408461}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1126441975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8162330695566700206, guid: c3070da2b4bc53e4c851bdef1255f67f, type: 3}
+  m_PrefabInstance: {fileID: 2112309504}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed92cbc119687dc4a9f67688a46e541e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1146642500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1293,7 +1308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1690471140
 Transform:
   m_ObjectHideFlags: 0

@@ -7,7 +7,6 @@ public class HotPlatform : MonoBehaviour
     [SerializeField] HealthSystem health;
     [SerializeField] DoorLeave door;
     [SerializeField] float loss = 0.5f;
-    [SerializeField] float wait = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +22,10 @@ public class HotPlatform : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D obj)
     {
-        while (door.gameObject.activeSelf && obj.gameObject.tag == "Player")
+        if (door.gameObject.activeSelf && obj.gameObject.tag == "Player")
         {
-            // Debug.Log("Trigger Working", this);
-            health.PlayerLoseHealth(loss, 1f);
+            //Debug.Log("Trigger Working", this);
+            health.PlayerLoseHealth(loss);
             /*float timer = 0;
 
             while (timer < wait)

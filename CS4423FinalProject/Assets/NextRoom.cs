@@ -8,10 +8,15 @@ public class NextRoom : MonoBehaviour
     [SerializeField] PlayerSO playerSO;
     string curScene = "Boss";
 
-    public void OnTriggerEnter2D(Collider2D obj)
+    void Start()
     {
         curScene += playerSO.curScene;
         Debug.Log(curScene);
+    }
+
+    public void OnTriggerEnter2D(Collider2D obj)
+    {
+        
         if((obj.gameObject.tag == "Player") && (SceneManager.GetActiveScene().name == curScene))
         {
             playerSO.curScene += 1;

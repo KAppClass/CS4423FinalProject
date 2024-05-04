@@ -1130,6 +1130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
+  enemySO: {fileID: 11400000, guid: ec3db1793e863ab4985fdcf11b24ee6b, type: 2}
+  inventory: {fileID: 11400000, guid: 4f5378040dbae044687e8a84aa51aa9b, type: 2}
 --- !u!4 &1992426462
 Transform:
   m_ObjectHideFlags: 0
