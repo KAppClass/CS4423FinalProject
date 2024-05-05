@@ -17,7 +17,7 @@ MonoBehaviour:
   firstOriginalSpeed: 2
   firstMaxHealth: 50
   firstHealth: 50
-  firstMana: 20
+  firstMana: 15
   firstManaRecovery: 1.5
   firstMaxMana: 20
   firstSpeed: 2
@@ -26,8 +26,8 @@ MonoBehaviour:
   secondOriginalMana: 30
   secondOriginalSpeed: 2.5
   secondMaxHealth: 75
-  secondHealth: 75
-  secondMana: 30
+  secondHealth: 50
+  secondMana: 15
   secondManaRecovery: 1.5
   secondMaxMana: 30
   secondSpeed: 2.5
@@ -36,8 +36,8 @@ MonoBehaviour:
   thirdOriginalMana: 40
   thirdOriginalSpeed: 0
   thirdMaxHealth: 100
-  thirdHealth: 100
-  thirdMana: 40
+  thirdHealth: 50
+  thirdMana: 15
   thirdManaRecovery: 2
   thirdMaxMana: 40
   thirdSpeed: 0

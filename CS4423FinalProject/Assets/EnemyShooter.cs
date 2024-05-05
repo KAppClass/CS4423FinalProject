@@ -11,6 +11,7 @@ public class EnemyShooter : MonoBehaviour
 
     [Header("Needed Systems")]
     [SerializeField] ManaManager manaManager;
+    [SerializeField] EnemyAnimationStateChanger changer;
     
 
     [Header("Enemy")]
@@ -61,9 +62,9 @@ public class EnemyShooter : MonoBehaviour
                         
                         if ( playerSpotted && (enemyMana >= fireBall.GetCost()))
                         {
-                            
                             ShootFireBall(aim);
                             manaManager.ReduceMana(fireBall.GetCost(), type);
+
                         }
                 
                     break;
@@ -85,9 +86,11 @@ public class EnemyShooter : MonoBehaviour
                         
                         if ( playerSpotted && (enemyMana >= plantBall.GetCost()))
                         {
-                            
+                            changer.ChangeAnimationState("Attack Start");
                             ShootPlantBall(aim);
                             manaManager.ReduceMana(plantBall.GetCost(), type);
+                            changer.ChangeAnimationState("Attack End");
+                            changer.ChangeAnimationState("Rest");
                         }
                 
                     break;

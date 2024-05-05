@@ -8,8 +8,9 @@ public class EyeballShooter : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] Enemy enemy;
 
-    [Header("Door")]
+    [Header("Necessary")]
     [SerializeField] DoorLeave doorLeave;
+    [SerializeField] EyeballAnimationStateChanger changer;
 
     [Header("Spell")]
     [SerializeField] DemonDarkBall darkBall;
@@ -46,14 +47,25 @@ public class EyeballShooter : MonoBehaviour
 
                     playerSpotted = ray.collider.CompareTag("Player");
                                 
-                        if ( playerSpotted)        
+                        if ( playerSpotted)
+                        {     
+                            changer.ChangeAnimationState("Start Attack");
                             ShootDarkBall(player.transform.position);
+                            changer.ChangeAnimationState("End Attack");
+                            yield return new WaitForSeconds(0.25f);
+                            changer.ChangeAnimationState("Rest");
+
+                        }
+                        else
+                            changer.ChangeAnimationState("Rest");
                         
                             
                 }
 
                 yield return new WaitForSeconds(1f);
             }
+            changer.StopAnimation();
+
         }
         
     }
