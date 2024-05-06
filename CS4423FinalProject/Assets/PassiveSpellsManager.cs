@@ -27,12 +27,6 @@ public class PassiveSpellsManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void ActivateSpell()
     {
         switch(playerSO.passiveSpell)

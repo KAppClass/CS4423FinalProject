@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class Player_Input : MonoBehaviour
 {
+    [Header("Player")]
     [SerializeField] Player player;
     [SerializeField] PlayerSO playerSO;
+
+    [Header("Necessary Systems")]
     [SerializeField] MovementManager movement;
     [SerializeField] ShootSpell shooter;
+    [SerializeField] PauseMenu pause;
 
-    
-
-    //ShootSpell shooter;
-
-    void Start()
-    {
-        //shooter = this.GetComponent<ShootSpell>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -27,6 +23,14 @@ public class Player_Input : MonoBehaviour
     void GetInput()
     {
          Vector3 input = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            if (Time.timeScale == 1)
+                pause.Pause();
+            else
+                pause.Resume();
+        }
 
 
         if(Input.GetKey(KeyCode.A)) { input.x += -1; }

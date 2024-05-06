@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class MovementManager : MonoBehaviour
 {
-
+    [Header("Player")]
     [SerializeField] Player player;
     [SerializeField] PlayerSO playerSO;
+    [SerializeField] GameObject body;
+    [SerializeField] PlayerAnimationStateChanger changer;
+
+    [Header("Enemy")]
     [SerializeField] Enemy first;
-    [SerializeField] LayerMask layer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void MovePlayer(Vector3 direction)
     {
@@ -30,6 +22,11 @@ public class MovementManager : MonoBehaviour
         Vector3 curVel = new Vector3(0, rigid.velocity.y, 0);
 
         MoveVel(direction, rigid, speed, curVel);
+
+        if (direction.x != 0)
+            changer.ChangeAnimationState("Move");
+        else
+            changer.ChangeAnimationState("Rest");
 
     }
 
@@ -42,6 +39,11 @@ public class MovementManager : MonoBehaviour
     void MoveVel(Vector3 direction, Rigidbody2D rigid, float speed, Vector3 curVel) 
     {
         rigid.velocity = curVel + (direction * speed);
+        if (rigid.velocity.x < 0)
+            body.transform.localScale = new Vector3(-1, 1, 1);
+        else if (rigid.velocity.x > 0)
+            body.transform.localScale = new Vector3(1, 1, 1);
+        
     }
 
     public void JumpPlayer()

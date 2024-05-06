@@ -134,6 +134,7 @@ public class Enemy : MonoBehaviour
     {
         this.shootTime = this.shootTime*speed;
         this.manaRecovery = this.manaRecovery*speed;
+        
         if(this.tag == "Enemy1")
             {
                 enemySO.firstSpeed = enemySO.firstSpeed*speed;
@@ -148,16 +149,10 @@ public class Enemy : MonoBehaviour
 
     public void ReduceMana(float cost)
     {
-        // Debug.Log("ReduceMana cost: " + cost, this);
-        //Debug.Log("ReduceMana mana before: " + this.mana, this);
-
         SetReducedMana(cost);
 
         if (mana <= 0)
             { this.mana = 0; }
-        //Debug.Log("ReduceMana mana after: " + this.mana, this);
-
-
     }
 
     void RecoverMana(){
@@ -179,18 +174,13 @@ public class Enemy : MonoBehaviour
                 
                 if(mana > 0)
                 {
-                    Debug.Log("spell " + spell);
                     shooter.ShootSpells(spell, player.transform.position, 1);              
                     yield return new WaitForSeconds(shootTime);
-                    
-                    //Debug.Log("Hit Mana: " + mana, this);
                 }
 
                 if(mana == 0)
                 {
-                    //Debug.Log("Hit Mana", this);
                     RecoverMana();
-                    //Debug.Log("Hit Coroutine: " + mana, this);
                     yield return new WaitForSeconds(manaRecovery);
                 }
 

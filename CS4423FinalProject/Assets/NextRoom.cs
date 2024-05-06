@@ -11,7 +11,7 @@ public class NextRoom : MonoBehaviour
     void Start()
     {
         curScene += playerSO.curScene;
-        Debug.Log(curScene);
+        //Debug.Log(curScene);
     }
 
     public void OnTriggerEnter2D(Collider2D obj)

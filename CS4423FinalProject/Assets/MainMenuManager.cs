@@ -8,6 +8,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] PlayerSO playerSO;
     [SerializeField] EnemySO enemySO;
     [SerializeField] InventorySO inventory;
+    
     public void StartGame()
     {
         SetupPlayer();

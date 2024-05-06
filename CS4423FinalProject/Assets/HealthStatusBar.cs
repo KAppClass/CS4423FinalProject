@@ -28,9 +28,5 @@ public class HealthStatusBar : MonoBehaviour
 
         foregroundTransform.localScale = new Vector3(barSize,1f,1f);
 
-        //foregroundTransform.localScale = new Vector3(percentage,1f,1f);
-
-        
-
     }
 }

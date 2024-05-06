@@ -47,9 +47,6 @@ public class Player : MonoBehaviour
             manaRecovery = playerSO.manaRecovery;
         }
 
-         //Debug.Log("PlayerSO " + playerSO.mana);
-        //Debug.Log("Player " + mana);
-
         RecoverMana(manaRecovery);
         
     }
@@ -92,8 +89,6 @@ public class Player : MonoBehaviour
         {
             this.mana = afterMana;
         }
-         //Debug.Log("PlayerSO " + playerSO.mana);
-        //Debug.Log("Player " + mana);
 
     }
 

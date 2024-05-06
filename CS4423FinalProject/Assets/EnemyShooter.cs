@@ -36,11 +36,6 @@ public class EnemyShooter : MonoBehaviour
         //transform.SetParent(creature.transform);
     }
 
-    void Update()
-    {
-        //ray = new Ray(transform.position, transform.);
-    }
-
     public void ShootSpells(int spell, Vector3 aim, int type)
     {
         //Raycast2D ray = new Ray2D(transform.position, aim);

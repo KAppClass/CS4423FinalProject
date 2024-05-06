@@ -6,24 +6,9 @@ public class ManaManager : MonoBehaviour
 {
     [SerializeField] Player player;
     [SerializeField] Enemy first;
-    //[SerializeField] PlayerSO playerSO;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+ 
     public void ReduceMana(float reduce, int type)
-    {
-
-        
+    {   
         switch (type)
         {
             case 0:
@@ -36,10 +21,6 @@ public class ManaManager : MonoBehaviour
                 Debug.Log("Mana Choosing went wrong");
                 break;
         }
-
-        // if ( type == 0)
-        //     player.ReduceMana(reduce);
-        
 
     }
 
