@@ -9,6 +9,11 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] EnemySO enemySO;
     [SerializeField] InventorySO inventory;
 
+    void Start()
+    {
+        enemySO.hard = false;
+    }
+
     public void StartGame()
     {
         PlayerPrefs.DeleteKey("Here");

@@ -21,11 +21,11 @@ MonoBehaviour:
   mana: 15
   speed: 7
   shootSpell: 0
-  spellList: 0000000002000000
+  spellList: 00000000
   trackSpell: 0
   passiveSpell: 0
   jump: 15
   manaRecovery: 0.5
   curScene: 1
-  loadSave: 1
+  loadSave: 0
   firstTime: 0

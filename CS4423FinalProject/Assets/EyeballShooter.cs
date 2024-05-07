@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EyeballShooter : MonoBehaviour
 {
+    [Header("Manager")]
+    [SerializeField] DemonDarkBallManager manager;
+    
     [Header("Characters")]
     [SerializeField] Player player;
     [SerializeField] Enemy enemy;
@@ -43,9 +46,12 @@ public class EyeballShooter : MonoBehaviour
                         if ( playerSpotted)
                         {     
                             changer.ChangeAnimationState("Start Attack");
-                            ShootDarkBall(player.transform.position);
+
+                            manager.ShootDarkBall(player.transform.position, this);
+                            
                             changer.ChangeAnimationState("End Attack");
                             yield return new WaitForSeconds(0.25f);
+
                             changer.ChangeAnimationState("Rest");
 
                         }
@@ -63,11 +69,5 @@ public class EyeballShooter : MonoBehaviour
         
     }
 
-    void ShootDarkBall(Vector3 aim)
-    {
-        DemonDarkBall spell = Instantiate(darkBall, transform.position, Quaternion.identity);
-        spell.transform.rotation = Quaternion.LookRotation(transform.forward, aim - transform.position);
-        spell.GetComponent<Rigidbody2D>().velocity = spell.transform.up * darkBall.GetSpeed();
-        //Destroy(spell,10);
-    }
+    
 }

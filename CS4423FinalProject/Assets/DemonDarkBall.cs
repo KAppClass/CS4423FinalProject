@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DemonDarkBall : MonoBehaviour
 {
+    [Header("Manager")]
+    public DemonDarkBallManager manager;
 
     [Header("Stats")]
 
@@ -29,14 +31,14 @@ public class DemonDarkBall : MonoBehaviour
         
         if (obj.gameObject.tag == "Enviroment")
         {
-            Destroy(this.gameObject);
+            manager.AddBall(this);
         }
         
         if (obj.gameObject.tag == "Player")
         {
             // Debug.Log("Trigger Working", this);
             healthSystem.PlayerLoseHealth(damage);
-            Destroy(this.gameObject);
+            manager.AddBall(this);
         }
 
     }

@@ -62,6 +62,25 @@ public class Enemy : MonoBehaviour
             }  
 
             this.maxMana = this.mana;
+
+            if(enemySO.hard)
+            {
+                health *= 2;
+                maxMana *= 2;
+                mana *= 2;
+                manaRecovery /= 2;
+                shootTime /=2;
+
+                if(this.tag == "Enemy1")
+                {
+                    enemySO.firstSpeed /= 2;
+                }  
+
+                if(this.tag == "Enemy2")
+                {
+                    enemySO.secondSpeed /= 2;
+                }
+            }
         
         }
 
@@ -134,7 +153,7 @@ public class Enemy : MonoBehaviour
     {
         this.shootTime = this.shootTime*speed;
         this.manaRecovery = this.manaRecovery*speed;
-        
+
         if(this.tag == "Enemy1")
             {
                 enemySO.firstSpeed = enemySO.firstSpeed*speed;
