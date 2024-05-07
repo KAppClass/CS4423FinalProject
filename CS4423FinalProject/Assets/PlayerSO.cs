@@ -23,4 +23,6 @@ public class PlayerSO : ScriptableObject
     public float manaRecovery = 0.5f;
 
     public int curScene = 0;
+    public bool loadSave = false;
+    public bool firstTime = true;
 }

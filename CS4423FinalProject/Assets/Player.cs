@@ -66,8 +66,13 @@ public class Player : MonoBehaviour
     {
         this.health -= loss;
         if (this.health <= 0)
-            { this.health = 0;
-            SceneManager.LoadScene("MainMenu");}
+        {
+            this.health = 0;
+            if (playerSO.loadSave)
+                SceneManager.LoadScene("Recovery and Save Room");
+            else
+                SceneManager.LoadScene("MainMenu");
+        }
         
     }
 
@@ -134,6 +139,7 @@ public class Player : MonoBehaviour
 
     public void ChangeShield(float shield)
     {
+        Debug.Log("Activiated");
         this.shield = shield;
     }
 

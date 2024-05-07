@@ -14,14 +14,20 @@ public class HealPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         PlayerRecovery();
+    }*/
+
+    public void OnTriggerStay2D(Collider2D obj)
+    {
+        if(obj.gameObject.tag == "Player")
+            PlayerRecovery();
     }
 
     void PlayerRecovery()
     {
-        if(active && Input.GetKeyDown(KeyCode.E))
+        if(active && Input.GetKey(KeyCode.E))
         {
             Debug.Log("Healing Player");
             player.GainHealth(recover);

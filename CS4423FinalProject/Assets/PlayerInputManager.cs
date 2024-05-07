@@ -24,38 +24,42 @@ public class Player_Input : MonoBehaviour
     {
          Vector3 input = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            if (Time.timeScale == 1)
-                pause.Pause();
-            else
-                pause.Resume();
+            PauseMenu.isPause = !PauseMenu.isPause;
+            pause.CheckPause();
         }
 
+        if(!PauseMenu.isPause)
+        {
+            if(Input.GetKey(KeyCode.A)) { input.x += -1; }
 
-        if(Input.GetKey(KeyCode.A)) { input.x += -1; }
+            if(Input.GetKey(KeyCode.D)) { input.x += 1; }
 
-        if(Input.GetKey(KeyCode.D)) { input.x += 1; }
+            if(Input.GetKeyDown(KeyCode.Space)) { 
+                
+                movement.JumpPlayer(); }
 
-        if(Input.GetKeyDown(KeyCode.Space)) { 
-            
-            movement.JumpPlayer(); }
+            if( Input.GetMouseButtonDown(0))
+            { 
+                shooter.ShootSpells(playerSO.shootSpell, Camera.main.ScreenToWorldPoint(Input.mousePosition), 0); 
 
-        if( Input.GetMouseButtonDown(0))
-        { 
-            shooter.ShootSpells(playerSO.shootSpell, Camera.main.ScreenToWorldPoint(Input.mousePosition), 0); 
+            }
 
-        }
+            if( Input.GetMouseButtonDown(1))
+            { 
+                playerSO.trackSpell = (playerSO.trackSpell+1)%playerSO.spellList.Count;
+                playerSO.shootSpell = playerSO.spellList[playerSO.trackSpell];
 
-        if( Input.GetMouseButtonDown(1))
-        { 
-            playerSO.trackSpell = (playerSO.trackSpell+1)%playerSO.spellList.Count;
-            playerSO.shootSpell = playerSO.spellList[playerSO.trackSpell];
-
-        }
+            }
         
 
-        movement.MovePlayer(input);
+            movement.MovePlayer(input);
+
+        }
+        else{
+
+        }
 
     }
 

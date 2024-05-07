@@ -8,13 +8,25 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] PlayerSO playerSO;
     [SerializeField] EnemySO enemySO;
     [SerializeField] InventorySO inventory;
-    
+
     public void StartGame()
     {
+        PlayerPrefs.DeleteKey("Here");
         SetupPlayer();
         SetupEnemy();
         SetupInventory();
         SceneManager.LoadScene("SpellRoom");
+    }
+
+    public void LoadGame()
+    {
+        if(PlayerPrefs.HasKey("Here"))
+        {
+            SetupEnemy();
+            playerSO.loadSave = true;
+            playerSO.firstTime = false;
+            SceneManager.LoadScene("Recovery and Save Room");
+        }
     }
 
     public void QuitGame()
@@ -31,6 +43,7 @@ public class MainMenuManager : MonoBehaviour
         playerSO.curScene = 1;
         playerSO.spellList.Clear();
         playerSO.spellList.Add(0);
+        playerSO.loadSave = false;
     }
 
     void SetupEnemy()
@@ -54,6 +67,11 @@ public class MainMenuManager : MonoBehaviour
         inventory.shootInventory.Add(1);
         inventory.shootInventory.Add(2);
         inventory.shootInventory.Add(3);
+
+        inventory.passiveInventory.Clear();
+        inventory.passiveInventory.Add(1);
+        inventory.passiveInventory.Add(2);
+        inventory.passiveInventory.Add(3);
 
         inventory.unopened = true;
     }

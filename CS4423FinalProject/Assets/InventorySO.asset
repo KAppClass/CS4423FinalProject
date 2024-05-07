@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b133ca186a407f4882f7a7710b19107, type: 3}
   m_Name: InventorySO
   m_EditorClassIdentifier: 
-  passiveInventory: 010000000200000003000000
-  shootInventory: 010000000200000003000000
+  passiveInventory: 0100000002000000
+  shootInventory: 0100000002000000
   unopened: 1

@@ -37,4 +37,6 @@ public class EnemySO : ScriptableObject
     public float thirdMaxMana;
     public float thirdSpeed;
     public float thirdShootTime;
+
+    public bool hard = false;
 }

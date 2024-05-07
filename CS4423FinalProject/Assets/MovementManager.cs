@@ -10,9 +10,6 @@ public class MovementManager : MonoBehaviour
     [SerializeField] GameObject body;
     [SerializeField] PlayerAnimationStateChanger changer;
 
-    [Header("Enemy")]
-    [SerializeField] Enemy first;
-
 
     public void MovePlayer(Vector3 direction)
     {
@@ -60,12 +57,8 @@ public class MovementManager : MonoBehaviour
 
     void Jump(Rigidbody2D rigid, float jump, Transform trans, float jumpOffset, float jumpRadius, LayerMask ground)
     {
-        // Debug.Log(trans.position + new Vector3(0,jumpOffset,0));
-        // Debug.Log(jumpRadius);
-        // Debug.Log(LayerMask.LayerToName(ground));
-        // Debug.Log(Physics2D.OverlapCircleAll(trans.position + new Vector3(0,jumpOffset,0),jumpRadius,ground).Length);
+        Debug.Log(Physics2D.OverlapCircleAll(trans.position + new Vector3(0,jumpOffset,0),jumpRadius,ground).Length);
         if(Physics2D.OverlapCircleAll(trans.position + new Vector3(0,jumpOffset,0),jumpRadius,ground).Length > 0) {
-            Debug.Log("JUmping");
             rigid.AddForce(Vector3.up * jump, ForceMode2D.Impulse);
         }
     

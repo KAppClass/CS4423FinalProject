@@ -4,29 +4,43 @@ using UnityEngine;
 
 public class HealthStatusBar : MonoBehaviour
 {
+    [Header("Player")]
     [SerializeField] PlayerSO playerSO;
-    public Transform foregroundTransform;
+
+    [Header("Health Incidator")]
+    public Transform healthForegroundTransform;
+    public Transform shieldForegroundTransform;
+
+    [Header("Bar Details")]
     public float barSpeed = 5f;
+    public float shieldAmount = 10f;
     
     [Range (0f,1f)]
-    public float percentage;
+    public float healthPercentage;
+    [Range (0f,1f)]
+    public float shieldPercentage;
 
     // Start is called before the first frame update
     void Start()
     {
-        percentage = 0;
+        healthPercentage = 0;
+        shieldPercentage = 0;
 
-        foregroundTransform.localScale = new Vector3(percentage,1f,1f);
+        healthForegroundTransform.localScale = new Vector3(healthPercentage,1f,1f);
+        shieldForegroundTransform.localScale = new Vector3(shieldPercentage,1f,1f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        percentage = playerSO.health/playerSO.maxHealth;
+        healthPercentage = playerSO.health/playerSO.maxHealth;
+        shieldPercentage = playerSO.shield/shieldAmount;
 
-        float barSize = Mathf.Lerp(foregroundTransform.localScale.x, percentage, Time.deltaTime*barSpeed);
+        float healthBarSize = Mathf.Lerp(healthForegroundTransform.localScale.x, healthPercentage, Time.deltaTime*barSpeed);
+        float shieldBarSize = Mathf.Lerp(shieldForegroundTransform.localScale.x, shieldPercentage, Time.deltaTime*barSpeed);
 
-        foregroundTransform.localScale = new Vector3(barSize,1f,1f);
+        healthForegroundTransform.localScale = new Vector3(healthBarSize,1f,1f);
+        shieldForegroundTransform.localScale = new Vector3(shieldBarSize,1f,1f);
 
     }
 }

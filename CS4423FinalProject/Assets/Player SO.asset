@@ -17,13 +17,15 @@ MonoBehaviour:
   maxHealth: 25
   maxMana: 15
   shield: 0
-  health: 874.5
+  health: 10
   mana: 15
   speed: 7
   shootSpell: 0
-  spellList: 00000000
+  spellList: 0000000002000000
   trackSpell: 0
   passiveSpell: 0
   jump: 15
   manaRecovery: 0.5
   curScene: 1
+  loadSave: 1
+  firstTime: 0

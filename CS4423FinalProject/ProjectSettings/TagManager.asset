@@ -10,6 +10,8 @@ TagManager:
   - Enemy1
   - Enemy2
   - Enemy3
+  - Heal
+  - Save
   layers:
   - Default
   - TransparentFX
