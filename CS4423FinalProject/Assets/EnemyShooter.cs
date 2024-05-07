@@ -59,7 +59,7 @@ public class EnemyShooter : MonoBehaviour
                         {
                             ShootFireBall(aim);
                             manaManager.ReduceMana(fireBall.GetCost(), type);
-
+                            GetComponent<AudioSource>().Play();
                         }
                 
                     break;
@@ -72,6 +72,7 @@ public class EnemyShooter : MonoBehaviour
                             
                             ShootLightningBall(aim);
                             manaManager.ReduceMana(lightningBall.GetCost(), type);
+                            GetComponent<AudioSource>().Play();
                         }
                 
                     break;
@@ -83,6 +84,7 @@ public class EnemyShooter : MonoBehaviour
                         {
                             changer.ChangeAnimationState("Attack Start");
                             ShootPlantBall(aim);
+                            GetComponent<AudioSource>().Play();
                             manaManager.ReduceMana(plantBall.GetCost(), type);
                             changer.ChangeAnimationState("Attack End");
                             changer.ChangeAnimationState("Rest");

@@ -35,6 +35,7 @@ public class ShootSpell : MonoBehaviour
                         //Debug.Log("Shooter User2: " + playerSO.mana,this);
                         ShootBasicBall(aim);
                         manaManager.ReduceMana(basicBall.GetCost(), type);
+                        GetComponent<AudioSource>().Play();
                     }
                 break;
             case 1:
@@ -45,6 +46,7 @@ public class ShootSpell : MonoBehaviour
                         //Debug.Log("Shooter User2: " + playerSO.mana,this);
                         ShootFireBall(aim);
                         manaManager.ReduceMana(fireBall.GetCost(), type);
+                        GetComponent<AudioSource>().Play();
                     }
             
                 break;
@@ -54,6 +56,7 @@ public class ShootSpell : MonoBehaviour
                         //Debug.Log("Shooter User2: " + playerSO.mana,this);
                         ShootIceBall(aim);
                         manaManager.ReduceMana(iceBall.GetCost(), type);
+                        GetComponent<AudioSource>().Play();
                     }
             
                 break;
@@ -63,6 +66,7 @@ public class ShootSpell : MonoBehaviour
                         //Debug.Log("Shooter User2: " + playerSO.mana,this);
                         ShootLightningBall(aim);
                         manaManager.ReduceMana(lightingBall.GetCost(), type);
+                        GetComponent<AudioSource>().Play();
                     }
             
                 break;
@@ -70,6 +74,7 @@ public class ShootSpell : MonoBehaviour
                 Debug.Log("Man Reduction Not working");
                 break;
         }
+
         
     }
 

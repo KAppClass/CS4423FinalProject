@@ -11,10 +11,12 @@ public class DoorManager : MonoBehaviour
     public void OpenExit()
     {
         doorLeave.gameObject.SetActive(false);
+        GetComponent<AudioSource>().Play();
     }
 
     public void CloseEntrance()
     {
         doorEnter.gameObject.SetActive(true);
+        GetComponent<AudioSource>().Play();
     }
 }

@@ -48,6 +48,7 @@ public class EyeballShooter : MonoBehaviour
                             changer.ChangeAnimationState("Start Attack");
 
                             manager.ShootDarkBall(player.transform.position, this);
+                            GetComponent<AudioSource>().Play();
                             
                             changer.ChangeAnimationState("End Attack");
                             yield return new WaitForSeconds(0.25f);
