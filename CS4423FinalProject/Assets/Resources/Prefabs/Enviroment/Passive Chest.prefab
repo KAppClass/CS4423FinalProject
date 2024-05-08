@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1566534957339818440}
   - component: {fileID: 170097378817851189}
   - component: {fileID: 8823093308097940250}
+  - component: {fileID: 4676954038718903226}
   m_Layer: 0
   m_Name: Passive Chest
   m_TagString: Untagged
@@ -126,6 +127,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSO: {fileID: 11400000, guid: 681f90603f759aa4a90965686ed46907, type: 2}
-  player: {fileID: 0}
   inventory: {fileID: 11400000, guid: 4f5378040dbae044687e8a84aa51aa9b, type: 2}
-  chosenSpell: 0
+--- !u!61 &4676954038718903226
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080806905883249829}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0034905672, y: 0.0037349463}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0251224, y: 1.01811}
+  m_EdgeRadius: 0

@@ -26,21 +26,12 @@ public class Save : MonoBehaviour
             LoadSave();
     }
 
-    // Update is called once per frame
-    /*void Update()
-    {
-        if(active && Input.GetKeyDown(KeyCode.E))
-        {
-            //Debug.Log("Healing Player");
-            SaveFile();
-            active = false;
-        }
-    }*/
 
     public void OnTriggerStay2D(Collider2D obj)
     {
         if(obj.gameObject.tag == "Player" && Input.GetKey(KeyCode.E))
         {
+            GetComponent<AudioSource>().Play();
             SaveFile();
             active = false;
             Debug.Log("Saved");

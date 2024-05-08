@@ -3,16 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuManager : MonoBehaviour
+public class EndScreenManager : MonoBehaviour
 {
+    [SerializeField] Transition transition;
     [SerializeField] PlayerSO playerSO;
     [SerializeField] EnemySO enemySO;
     [SerializeField] InventorySO inventory;
-    [SerializeField] Transition transition;
 
+    // Start is called before the first frame update
     void Start()
     {
-        enemySO.hard = false;
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void MainMenu()
+    {
+        Debug.Log("Clicked");
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     public void StartGame()
@@ -22,22 +40,6 @@ public class MainMenuManager : MonoBehaviour
         SetupEnemy();
         SetupInventory();
         transition.FadeToColor("SpellRoom");
-    }
-
-    public void LoadGame()
-    {
-        if(PlayerPrefs.HasKey("Here"))
-        {
-            SetupEnemy();
-            playerSO.loadSave = true;
-            playerSO.firstTime = false;
-            transition.FadeToColor("Recovery and Save Room");
-        }
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 
     void SetupPlayer()

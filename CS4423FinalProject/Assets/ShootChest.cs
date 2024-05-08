@@ -18,15 +18,24 @@ public class ShootChest : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         OpenChest();
+    }*/
+
+    public void OnTriggerStay2D(Collider2D obj)
+    {
+        if(obj.gameObject.tag == "Player" && Input.GetKey(KeyCode.E))
+        {
+            OpenChest();
+        }
     }
 
     void OpenChest()
     {
         if(inventory.unopened && Input.GetKeyDown(KeyCode.E))
         {
+            GetComponent<AudioSource>().Play();
             playerSO.spellList.Add(chosenSpell);
             inventory.shootInventory.RemoveAt(index);
             inventory.unopened = false;

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class NextRoom : MonoBehaviour
 {
     [SerializeField] PlayerSO playerSO;
+    [SerializeField] Transition transition;
+
     string curScene = "Boss";
 
     void Start()
@@ -16,21 +19,26 @@ public class NextRoom : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D obj)
     {
+        if((obj.gameObject.tag == "Player") && (SceneManager.GetActiveScene().name == "Boss3"))
+        {
+            transition.FadeToColor("End Screen");
+        }
         
         if((obj.gameObject.tag == "Player") && (SceneManager.GetActiveScene().name == curScene))
         {
             playerSO.curScene += 1;
             playerSO.firstTime = true;
-            SceneManager.LoadScene("Recovery and Save Room");
+            transition.FadeToColor("Recovery and Save Room");
         }
         if((obj.gameObject.tag == "Player") && (SceneManager.GetActiveScene().name == "Recovery and Save Room"))
         {
-            SceneManager.LoadScene("SpellRoom");
+            transition.FadeToColor("SpellRoom");
         }
         if((obj.gameObject.tag == "Player") && (SceneManager.GetActiveScene().name == "SpellRoom"))
         {
             playerSO.firstTime = false;
-            SceneManager.LoadScene(curScene);
+            transition.FadeToColor(curScene);
         }
+        
     }
 }

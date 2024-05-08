@@ -29,7 +29,8 @@ public class HealPlayer : MonoBehaviour
     {
         if(active && Input.GetKey(KeyCode.E))
         {
-            Debug.Log("Healing Player");
+            GetComponent<AudioSource>().Play();
+            //Debug.Log("Healing Player");
             player.GainHealth(recover);
             active = false;
         }
